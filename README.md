@@ -29,6 +29,15 @@ Run it with:
 deno task start
 ```
 
+Build the browser version with:
+
+```sh
+deno task web:build
+```
+
+Then serve `dist/` with any static file server. The browser build uses the vendored `deno_tui` web canvas host plus the
+same Three ASCII WebGPU renderer path; browsers without a WebGPU adapter show an in-canvas offline message.
+
 Controls:
 
 - Arrow keys: pitch and roll
