@@ -4,23 +4,23 @@ A clean-room Elite-inspired terminal flight demo built with Deno, Three.js, and 
 renderer.
 
 <figure>
-  <img src="assets/screenshots/startup-help.svg" alt="Live Elite TUI startup help overlay capture" width="100%">
-  <figcaption>Real 180x54 terminal capture from <code>deno task start</code>: startup help overlay, live Three ASCII scene, scanner, and dashboard. <a href="assets/screenshots/startup-help.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/startup-help.png" alt="Live Elite TUI startup help overlay capture" width="100%">
+  <figcaption>Real 180x54 terminal capture from <code>deno task start</code>: startup help overlay, live Three ASCII scene, scanner, and dashboard. <a href="assets/screenshots/startup-help.png">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/flight-scanner.svg" alt="Live Elite TUI flight and scanner capture" width="100%">
-  <figcaption>Real 180x54 terminal capture after hiding help: flight view, scanner contacts, target readout, and dashboard telemetry. <a href="assets/screenshots/flight-scanner.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/flight-scanner.png" alt="Live Elite TUI flight and scanner capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after hiding help: flight view, scanner contacts, target readout, and dashboard telemetry. <a href="assets/screenshots/flight-scanner.png">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/render-options.svg" alt="Live Elite TUI render options capture" width="100%">
-  <figcaption>Real 180x54 terminal capture after switching ASCII glyph mode and toggling fill rendering. <a href="assets/screenshots/render-options.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/render-options.png" alt="Live Elite TUI render options capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after switching ASCII glyph mode and toggling fill rendering. <a href="assets/screenshots/render-options.png">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/hyperspace-reset.svg" alt="Live Elite TUI hyperspace jump capture" width="100%">
-  <figcaption>Real 180x54 terminal capture after pressing <code>H</code> for a fuel-consuming hyperspace jump. <a href="assets/screenshots/hyperspace-reset.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/hyperspace-reset.png" alt="Live Elite TUI hyperspace jump capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after pressing <code>H</code> for a fuel-consuming hyperspace jump. <a href="assets/screenshots/hyperspace-reset.png">Open full size</a>.</figcaption>
 </figure>
 
 Run it with:
