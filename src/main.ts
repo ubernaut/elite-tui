@@ -41,6 +41,7 @@ const DASHBOARD_HEIGHT = 10;
 const SCANNER_WIDTH = 28;
 const MAX_SPEED = 36;
 const TARGET_COUNT = 5;
+const ENEMY_FIRE_RANGE = 58;
 const audioEncoder = new TextEncoder();
 
 const neon = {
@@ -81,6 +82,7 @@ interface Target {
   velocity: Vector3;
   hostile: boolean;
   integrity: number;
+  attackCooldown: number;
 }
 
 interface ShipState {
@@ -92,11 +94,14 @@ interface ShipState {
   energy: number;
   foreShield: number;
   aftShield: number;
+  hull: number;
   laserHeat: number;
   missiles: number;
   score: number;
+  credits: number;
   alert: Alert;
   paused: boolean;
+  docked: boolean;
   targetIndex: number;
   message: string;
 }
@@ -110,11 +115,14 @@ const state: ShipState = {
   energy: 100,
   foreShield: 100,
   aftShield: 100,
+  hull: 100,
   laserHeat: 0,
   missiles: 3,
   score: 0,
+  credits: 0,
   alert: "GREEN",
   paused: false,
+  docked: false,
   targetIndex: 0,
   message: "LAUNCHED FROM LAVE ORBITAL",
 };
@@ -431,12 +439,12 @@ function buildHud(): void {
     "NEON EXODUS FLIGHT DECK",
     "? hide/show   Q quit   P pause",
     "ARROWS pitch/roll     A/D yaw",
-    "W/S throttle          Space pulse laser",
-    "Tab target            H hyperspace reset",
-    "ASCII 1 blocks   2 glyphs   3 mixed",
-    "E edges   F fill   I invert luminance",
-    "Center target before firing",
-    "Scanner symbols: ◆ lock  × hostile  ○ neutral",
+    "W/S throttle    Space pulse laser",
+    "M missile       C dock/refit",
+    "Tab target      H hyperspace reset",
+    "ASCII 1 blocks  2 glyphs  3 mixed",
+    "E edges  F fill  I invert luminance",
+    "Scanner: ◆ lock × hostile ○ neutral",
   ];
 
   helpLines.forEach((line, index) => {
@@ -621,6 +629,12 @@ function bindKeys(): void {
       case "space":
         fireLaser();
         break;
+      case "m":
+        fireMissile();
+        break;
+      case "c":
+        attemptDock();
+        break;
       case "tab":
         state.targetIndex = (state.targetIndex + 1) % targets.length;
         state.message = `TARGET ${activeTarget().id}`;
@@ -630,8 +644,16 @@ function bindKeys(): void {
         hyperspaceReset();
         break;
       case "p":
-        state.paused = !state.paused;
-        state.message = state.paused ? "FLIGHT COMPUTER PAUSED" : "FLIGHT COMPUTER ACTIVE";
+        if (state.docked) {
+          state.docked = false;
+          state.paused = false;
+          state.throttle = 8;
+          state.speed = 4;
+          state.message = "LAUNCH CLEARANCE GRANTED";
+        } else {
+          state.paused = !state.paused;
+          state.message = state.paused ? "FLIGHT COMPUTER PAUSED" : "FLIGHT COMPUTER ACTIVE";
+        }
         sound.play("pause");
         break;
     }
@@ -665,7 +687,7 @@ function setRenderEffect(patch: Partial<Pick<typeof renderOptions, "edges" | "fi
 }
 
 function updateWorld(deltaTime: number): void {
-  if (!state.paused) {
+  if (!state.paused && state.hull > 0) {
     const dt = Math.min(deltaTime, 0.08);
     state.speed += (state.throttle - state.speed) * dt * 1.8;
     state.pitch *= 0.93;
@@ -691,6 +713,8 @@ function updateWorld(deltaTime: number): void {
       target.group.rotation.x += dt * 0.5;
       target.group.rotation.y += dt * 0.9;
       target.group.position.z += state.speed * dt * 0.32;
+      target.attackCooldown = Math.max(0, target.attackCooldown - dt);
+      maybeEnemyFire(target);
       if (target.group.position.z > 12 || target.group.position.length() > 160) {
         placeRaider(target, Math.random() * 80 - 40, Math.random() * 32 - 10, -80 - Math.random() * 80);
       }
@@ -732,14 +756,7 @@ function fireLaser(): void {
     target.integrity = clamp(target.integrity - 34, 0, 100);
     state.message = target.integrity <= 0 ? `${target.id} DESTROYED` : `${target.id} HIT`;
     if (target.integrity <= 0) {
-      sound.play("kill");
-      state.score += target.hostile ? 1 : 0;
-      target.group.visible = false;
-      setTimeout(() => {
-        target.group.visible = true;
-        target.integrity = 100;
-        placeRaider(target, Math.random() * 90 - 45, Math.random() * 36 - 12, -100 - Math.random() * 80);
-      }, 1800);
+      destroyTarget(target);
     } else {
       sound.play("hit");
     }
@@ -748,13 +765,108 @@ function fireLaser(): void {
   }
 }
 
+function fireMissile(): void {
+  if (state.missiles <= 0) {
+    state.message = "MISSILE BAY EMPTY";
+    sound.play("error");
+    return;
+  }
+
+  const target = activeTarget();
+  const range = Math.abs(target.group.position.z);
+  if (target === station || !target.group.visible || target.integrity <= 0 || range > 150) {
+    state.message = "MISSILE LOCK FAILED";
+    sound.play("error");
+    return;
+  }
+
+  state.missiles -= 1;
+  state.energy = clamp(state.energy - 8, 0, 100);
+  target.integrity = 0;
+  laserBeams.visible = true;
+  state.message = `MISSILE DESTROYED ${target.id}`;
+  destroyTarget(target);
+}
+
+function destroyTarget(target: Target): void {
+  sound.play("kill");
+  if (target.hostile) {
+    state.score += 1;
+    state.credits += 100;
+  }
+  target.group.visible = false;
+  setTimeout(() => {
+    target.group.visible = true;
+    target.integrity = 100;
+    placeRaider(target, Math.random() * 90 - 45, Math.random() * 36 - 12, -100 - Math.random() * 80);
+  }, 1800);
+}
+
+function maybeEnemyFire(target: Target): void {
+  if (!target.hostile || target.attackCooldown > 0) return;
+
+  const p = target.group.position;
+  const inCone = Math.abs(p.x) < 18 && Math.abs(p.y) < 12 && p.z < -8 && p.z > -ENEMY_FIRE_RANGE;
+  if (!inCone) return;
+
+  target.attackCooldown = 1.6 + Math.random() * 1.4;
+  takeDamage(5 + Math.random() * 10, p.z < -32 ? "fore" : "aft", target.id);
+}
+
+function takeDamage(amount: number, shield: "fore" | "aft", source: string): void {
+  const shieldKey = shield === "fore" ? "foreShield" : "aftShield";
+  const shieldValue = state[shieldKey];
+  const absorbed = Math.min(shieldValue, amount);
+  state[shieldKey] = clamp(shieldValue - amount, 0, 100);
+  const leak = amount - absorbed;
+  if (leak > 0) {
+    state.hull = clamp(state.hull - leak * 1.5, 0, 100);
+    state.energy = clamp(state.energy - leak * 0.6, 0, 100);
+  }
+
+  state.message = state.hull <= 0
+    ? "HULL BREACH - PRESS H TO REBOOT"
+    : `${source} LASER HIT ${shield.toUpperCase()} SHIELD`;
+  sound.play(state.hull <= 0 ? "error" : "hit");
+  if (state.hull <= 0) {
+    state.paused = true;
+    state.throttle = 0;
+  }
+}
+
+function attemptDock(): void {
+  const target = activeTarget();
+  const range = Math.abs(station.group.position.z);
+  if (target !== station || range > 115 || state.speed > 14) {
+    state.message = "DOCKING DENIED - TARGET STATION AT LOW SPEED";
+    sound.play("error");
+    return;
+  }
+
+  state.docked = true;
+  state.paused = true;
+  state.speed = 0;
+  state.throttle = 0;
+  state.energy = 100;
+  state.foreShield = 100;
+  state.aftShield = 100;
+  state.hull = 100;
+  state.laserHeat = 0;
+  state.missiles = 3;
+  state.message = "DOCKED: SHIP REFIT COMPLETE";
+  sound.play("hyperspace");
+}
+
 function hyperspaceReset(): void {
   state.energy = 100;
   state.foreShield = 100;
   state.aftShield = 100;
+  state.hull = 100;
   state.laserHeat = 0;
   state.throttle = 20;
   state.speed = 6;
+  state.paused = false;
+  state.docked = false;
   world.rotation.set(0, 0, 0);
   for (const [index, target] of targets.entries()) {
     if (target === station) continue;
@@ -776,15 +888,15 @@ function refreshHud(): void {
     : "";
   hud.status.value = ` SPD ${state.speed.toFixed(1).padStart(4)}  THR ${state.throttle.toFixed(0).padStart(2)}  ` +
     `ALT ${(planet.position.distanceTo(camera.position) - 14).toFixed(0).padStart(3)}  ` +
-    `MISS ${state.missiles}  ALERT ${state.alert}  LOCK ${target.id}`;
+    `MISS ${state.missiles}  CR ${state.credits.toString().padStart(4)}  ALERT ${state.alert}  LOCK ${target.id}`;
   hud.render.value = ` ASCII ${renderOptions.glyphStyle.toUpperCase()}  EDGE ${onOff(renderOptions.edges)}  FILL ${
     onOff(renderOptions.fill)
   }  INV ${onOff(renderOptions.invertLuminance)} `;
   [
     `SHIELD  FORE ${bar(state.foreShield)}  AFT ${bar(state.aftShield)}`,
-    `CORE    ENER ${bar(state.energy)}  LASER ${bar(100 - state.laserHeat)}`,
+    `CORE    ENER ${bar(state.energy)}  HULL ${bar(state.hull)}  LASER ${bar(100 - state.laserHeat)}`,
     `VECTOR  PIT ${axisBar(state.pitch)}  ROL ${axisBar(state.roll)}  YAW ${axisBar(state.yaw)}`,
-    `? help   1 blocks  2 glyphs  3 mixed   E edges  F fill  I invert   Q quit`,
+    `M missile  C dock  ? help  1 blocks 2 glyphs 3 mixed  E/F/I render  Q quit`,
   ].forEach((line, index) => {
     hud.gauges[index]!.value = line;
   });
@@ -844,6 +956,7 @@ function createWireBox(id: string, size: number, color: string): Target {
     velocity: new Vector3(0, 0, 0),
     hostile: false,
     integrity: 100,
+    attackCooldown: 0,
   };
 }
 
@@ -869,6 +982,7 @@ function createRaider(index: number): Target {
     velocity: new Vector3((Math.random() - 0.5) * 6, (Math.random() - 0.5) * 3, 5 + Math.random() * 8),
     hostile: index % 2 === 0,
     integrity: 100,
+    attackCooldown: 0.8 + Math.random() * 2.5,
   };
 
   placeRaider(target, Math.sin(index * 2.4) * 42, Math.cos(index * 1.8) * 18, -70 - index * 22);
@@ -878,6 +992,7 @@ function createRaider(index: number): Target {
 function placeRaider(target: Target, x: number, y: number, z: number): void {
   target.group.position.set(x, y, z);
   target.velocity.set((Math.random() - 0.5) * 5, (Math.random() - 0.5) * 2.2, 4 + Math.random() * 7);
+  target.attackCooldown = 1.2 + Math.random() * 2.4;
 }
 
 function createReticle(): Group {

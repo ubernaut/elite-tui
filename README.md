@@ -35,9 +35,11 @@ Controls:
 - `A` / `D`: yaw
 - `W` / `S`: throttle
 - Space: pulse laser
+- `M`: fire missile
 - `Tab`: cycle target
-- `H`: hyperspace reset
-- `P`: pause
+- `C`: dock and refit when locked on the station at low speed
+- `H`: hyperspace reset or reboot after hull breach
+- `P`: pause, or launch after docking
 - `?`: show or hide help
 - `1` / `2` / `3`: switch ASCII blocks, glyphs, or mixed mode
 - `E` / `F` / `I`: toggle edges, fill, or inverted luminance
@@ -52,6 +54,9 @@ ELITE_TUI_SOUND=0 deno task start
 
 The scanner panel appears when the terminal has enough width and height; compact terminals prioritize the flight view,
 help overlay, and dashboard.
+
+Hostile raiders now return fire when they close to weapon range. Keep shields up, manage laser heat, use missiles for
+quick kills, and dock at the Coriolis station to restore hull, shields, energy, heat, and missile stores.
 
 The code intentionally does not copy NES Elite source, ROM, image, or ship data. It uses procedural Three.js geometry
 and a local vendored snapshot of `deno_tui`.

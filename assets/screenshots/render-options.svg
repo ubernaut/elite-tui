@@ -5,33 +5,26 @@
   <rect x="20" y="20" width="3104" height="1676" rx="18" fill="#050915" stroke="#137d91" stroke-width="3"/>
   <g font-family="JetBrains Mono, Cascadia Mono, Fira Mono, Consolas, monospace" font-size="23" xml:space="preserve">
     <text x="42" y="48" fill="#e8fbff">   ELITE TUI // NEON EXODUS  SCORE   0                                      !! FLIGHT // RED !! &lt;&gt;                                    ASCII GLYPHS  EDGE ON  FILL OFF  INV OFF</text>
+    <text x="59" y="78" fill="#2ea2a4">                                                                                  /</text>
+    <text x="1555" y="78" fill="#91a6ac">-</text>
     <text x="2575" y="78" fill="#e8fbff">╭────────────────────────────╮</text>
-    <text x="59" y="108" fill="#2ea2a4">                                                                        -</text>
     <text x="2575" y="108" fill="#e8fbff">│ LOCAL SCANNER // LAVE      │</text>
-    <text x="59" y="138" fill="#2ea2a4">                                                                  /</text>
+    <text x="1572" y="138" fill="#91a6ac"> -</text>
+    <text x="1674" y="138" fill="#aca8af">/</text>
     <text x="2575" y="138" fill="#e8fbff">│                            │</text>
-    <text x="59" y="168" fill="#2ea2a4">                                                                 /</text>
-    <text x="1181" y="168" fill="#91a6ac">/</text>
-    <text x="1266" y="168" fill="#2ea2a4">-</text>
-    <text x="2575" y="168" fill="#e8fbff">│ ··········×·◆··○········   │</text>
-    <text x="1232" y="198" fill="#37d6ee">\</text>
-    <text x="1385" y="198" fill="#2ea2a4">\</text>
-    <text x="2575" y="198" fill="#e8fbff">│ ·······×················   │</text>
-    <text x="1283" y="228" fill="#91a6ac"> -</text>
-    <text x="2575" y="228" fill="#e8fbff">│ ············×··○········   │</text>
-    <text x="59" y="258" fill="#2ea2a4">                                                                 \</text>
-    <text x="1266" y="258" fill="#2ea2a4">/\</text>
+    <text x="59" y="168" fill="#2ea2a4">                                                                                   \</text>
+    <text x="1487" y="168" fill="#b6b1b9">\</text>
+    <text x="2575" y="168" fill="#e8fbff">│ ···········×◆···○·······   │</text>
+    <text x="1572" y="198" fill="#9aafb5">-</text>
+    <text x="1589" y="198" fill="#cdb3bd">-</text>
+    <text x="1623" y="198" fill="#2ea2a4"> /</text>
+    <text x="2575" y="198" fill="#e8fbff">│ ······×·················   │</text>
+    <text x="2575" y="228" fill="#e8fbff">│ ·············×··○·······   │</text>
     <text x="2575" y="258" fill="#e8fbff">│ ························   │</text>
-    <text x="1351" y="288" fill="#b6b1b9">/</text>
-    <text x="1368" y="288" fill="#2ea2a4">/</text>
     <text x="2575" y="288" fill="#e8fbff">│ ············▲···········   │</text>
-    <text x="59" y="318" fill="#2ea2a4">                                                                   \</text>
-    <text x="1249" y="318" fill="#9aafb5">-</text>
-    <text x="1283" y="318" fill="#91a6ac">-</text>
-    <text x="1317" y="318" fill="#2ea2a4"> /</text>
     <text x="2575" y="318" fill="#e8fbff">│ ························   │</text>
     <text x="2575" y="348" fill="#e8fbff">│ ························   │</text>
-    <text x="59" y="378" fill="#2ea2a4">                                                                                                   /</text>
+    <text x="1657" y="378" fill="#2ea2a4">     /</text>
     <text x="1776" y="378" fill="#95c8c0">-</text>
     <text x="1793" y="378" fill="#93cfc1">-</text>
     <text x="1810" y="378" fill="#8dd4c2">-</text>
@@ -39,58 +32,68 @@
     <text x="1725" y="408" fill="#86aeb7">/</text>
     <text x="1861" y="408" fill="#6dcebd">\</text>
     <text x="2575" y="408" fill="#e8fbff">│                            │</text>
+    <text x="1776" y="438" fill="#cde4bb">-</text>
     <text x="2575" y="438" fill="#e8fbff">│ LOCK CORIOLIS STATION RNG  │</text>
-    <text x="1096" y="468" fill="#74adb1">/</text>
-    <text x="1181" y="468" fill="#2ea2a4">\                            /</text>
     <text x="1861" y="468" fill="#45a7a8">/</text>
     <text x="2575" y="468" fill="#e8fbff">│                            │</text>
-    <text x="1827" y="498" fill="#2ea2a4"> /</text>
     <text x="2575" y="498" fill="#e8fbff">╰────────────────────────────╯</text>
-    <text x="1096" y="528" fill="#6ea4a8">\</text>
-    <text x="1181" y="528" fill="#2ea2a4">                             \</text>
-    <text x="1759" y="528" fill="#2ea2a4">/</text>
-    <text x="773" y="558" fill="#2ea2a4">                                                        -</text>
-    <text x="1844" y="648" fill="#9acab4">/</text>
-    <text x="1997" y="648" fill="#9acab4">\</text>
-    <text x="2014" y="648" fill="#2ea2a4">\</text>
+    <text x="59" y="528" fill="#2ea2a4">                                                                     -                             \</text>
+    <text x="1776" y="528" fill="#cde4bb">  -</text>
+    <text x="1827" y="528" fill="#2ea2a4"> /</text>
+    <text x="807" y="618" fill="#2ea2a4">                       \</text>
+    <text x="1232" y="618" fill="#aca8af">-</text>
+    <text x="1266" y="618" fill="#2ea2a4">/</text>
     <text x="59" y="678" fill="#2ea2a4">                                                                     /</text>
-    <text x="1249" y="678" fill="#3dcdd0">/</text>
-    <text x="1266" y="678" fill="#2ea2a4">/</text>
-    <text x="2014" y="678" fill="#b6d8b8">\</text>
+    <text x="1266" y="678" fill="#2ea2a4">//</text>
     <text x="59" y="708" fill="#2ea2a4">                                                                      /</text>
-    <text x="59" y="738" fill="#2ea2a4">                                                -                 --</text>
-    <text x="1249" y="738" fill="#2ea2a4">         ---</text>
-    <text x="1878" y="738" fill="#2ea2a4">-</text>
+    <text x="1283" y="708" fill="#2ea2a4">/</text>
+    <text x="59" y="738" fill="#2ea2a4">                                                -                 --\</text>
+    <text x="1402" y="738" fill="#2ea2a4"> --</text>
     <text x="960" y="768" fill="#2ea2a4"> \</text>
-    <text x="1351" y="768" fill="#2ea2a4"> /                           \</text>
-    <text x="1997" y="768" fill="#2ea2a4">/</text>
+    <text x="1334" y="768" fill="#36b9bc">/</text>
+    <text x="1351" y="768" fill="#2ea2a4">/</text>
+    <text x="2167" y="768" fill="#9acab4">-</text>
+    <text x="2286" y="768" fill="#2ea2a4"> \</text>
     <text x="59" y="798" fill="#2ea2a4">                                         /</text>
     <text x="994" y="798" fill="#2fa4ab">\</text>
+    <text x="1011" y="798" fill="#2ea2a4">                 \</text>
     <text x="1351" y="798" fill="#2ea2a4">/</text>
-    <text x="1419" y="798" fill="#2ea2a4">                           --- --</text>
-    <text x="467" y="828" fill="#9aafb5">--</text>
+    <text x="2320" y="798" fill="#2ea2a4">\</text>
     <text x="739" y="828" fill="#35acba">/</text>
-    <text x="569" y="888" fill="#2ea2a4">         |</text>
-    <text x="926" y="888" fill="#42b9e1">-</text>
+    <text x="1011" y="828" fill="#33b3c1">\</text>
+    <text x="1028" y="858" fill="#2ea2a4">                                                               \</text>
+    <text x="1028" y="888" fill="#2ea2a4">                                                                \</text>
+    <text x="2133" y="888" fill="#b6d8b8">\</text>
+    <text x="59" y="918" fill="#2ea2a4">                                       \</text>
     <text x="1011" y="918" fill="#33b2c1">/</text>
-    <text x="59" y="948" fill="#2ea2a4">                   \</text>
-    <text x="501" y="948" fill="#aca8af">-</text>
-    <text x="552" y="948" fill="#2ea2a4">/          \</text>
+    <text x="2201" y="918" fill="#cde4bb">---</text>
+    <text x="2269" y="918" fill="#2ea2a4"> /</text>
+    <text x="59" y="948" fill="#2ea2a4">                                        \</text>
     <text x="994" y="948" fill="#2fa5b1">/</text>
     <text x="1011" y="948" fill="#2ea2a4">/</text>
-    <text x="331" y="978" fill="#2ea2a4">     \-</text>
-    <text x="450" y="978" fill="#6ea4a8">-</text>
-    <text x="484" y="978" fill="#2ea2a4"> -/             \</text>
+    <text x="178" y="978" fill="#cdb3bd">-</text>
+    <text x="195" y="978" fill="#91a6ac">-</text>
+    <text x="229" y="978" fill="#2ea2a4">-</text>
+    <text x="280" y="978" fill="#2ea2a4">                            \</text>
     <text x="773" y="978" fill="#2fa3ab">\</text>
     <text x="977" y="978" fill="#2ea2a4">/</text>
+    <text x="59" y="1008" fill="#2ea2a4">   /</text>
+    <text x="314" y="1008" fill="#2ea2a4">\</text>
     <text x="858" y="1008" fill="#2fa3aa">--</text>
+    <text x="59" y="1038" fill="#2ea2a4">  |</text>
+    <text x="59" y="1068" fill="#2ea2a4">  |</text>
+    <text x="178" y="1068" fill="#2ea2a4">-</text>
+    <text x="110" y="1098" fill="#b6b1b9">\</text>
+    <text x="297" y="1098" fill="#2ea2a4">/</text>
+    <text x="59" y="1128" fill="#2ea2a4">     -</text>
+    <text x="263" y="1128" fill="#2ea2a4">/</text>
     <text x="42" y="1338" fill="#e8fbff"> ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</text>
-    <text x="42" y="1368" fill="#e8fbff"> │  SPD 18.0  THR 18  ALT 156  MISS 3  ALERT RED  LOCK CORIOLISLIS                                                                                                                │</text>
+    <text x="42" y="1368" fill="#e8fbff"> │  SPD 18.0  THR 18  ALT 156  MISS 3  CR    0  ALERT RED  LOCK CORIOLISLIS                                                                                                       │</text>
     <text x="42" y="1398" fill="#e8fbff"> │                                                                                                                                                                                │</text>
     <text x="42" y="1428" fill="#e8fbff"> │ SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▰▰  AFT ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                                                    │</text>
-    <text x="42" y="1458" fill="#e8fbff"> │ CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                                                  │</text>
+    <text x="42" y="1458" fill="#e8fbff"> │ CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  HULL ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                               │</text>
     <text x="42" y="1488" fill="#e8fbff"> │ VECTOR  PIT ────◆────  ROL ────◆────  YAW ────◆────                                                                                                                            │</text>
-    <text x="42" y="1518" fill="#e8fbff"> │ ? help   1 blocks  2 glyphs  3 mixed   E edges  F fill  I invert   Q quit                                                                                                      │</text>
+    <text x="42" y="1518" fill="#e8fbff"> │ M missile  C dock  ? help  1 blocks 2 glyphs 3 mixed  E/F/I render  Q quit                                                                                                     │</text>
     <text x="42" y="1548" fill="#e8fbff"> │                                                                                                                                                                                │</text>
     <text x="42" y="1578" fill="#e8fbff"> │ &gt;&gt; ASCII FILL OFFGLYPHSRBITAL                                                                                                                                                  │</text>
     <text x="42" y="1608" fill="#e8fbff"> ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</text>
