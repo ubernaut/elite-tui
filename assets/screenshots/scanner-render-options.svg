@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1792" height="1216" viewBox="0 0 1792 1216" role="img" aria-labelledby="title desc">
   <title id="title">Elite TUI scanner and render options</title>
   <desc id="desc">A neon terminal cockpit view with scanner panel, ASCII render options, and ship gauges.</desc>
+  <g transform="scale(1.6)">
   <rect width="1120" height="760" fill="#02030a"/>
   <rect x="24" y="24" width="1072" height="712" rx="10" fill="#050915" stroke="#137d91" stroke-width="2"/>
   <text x="52" y="58" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">ELITE TUI // NEON EXODUS  SCORE 003</text>
@@ -32,4 +33,5 @@
   <text x="82" y="614" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="21">SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▱▱  AFT ▰▰▰▰▰▰▰▰▰▰▰▱</text>
   <text x="82" y="656" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="21">CORE    ENER ▰▰▰▰▰▰▰▰▰▱▱▱  LASER ▰▰▰▰▰▰▰▱▱▱▱▱</text>
   <text x="82" y="698" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="20">&gt;&gt; BOA-3 HIT</text>
+  </g>
 </svg>

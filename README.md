@@ -3,9 +3,15 @@
 A clean-room Elite-inspired terminal flight demo built with Deno, Three.js, and the local `deno_tui` Three ASCII
 renderer.
 
-![Elite TUI cockpit help overlay](assets/screenshots/cockpit-help.svg)
+<figure>
+  <img src="assets/screenshots/cockpit-help.svg" alt="Elite TUI cockpit help overlay" width="100%">
+  <figcaption>Compact cockpit view with the onboard controls overlay.</figcaption>
+</figure>
 
-![Elite TUI scanner and render options](assets/screenshots/scanner-render-options.svg)
+<figure>
+  <img src="assets/screenshots/scanner-render-options.svg" alt="Elite TUI scanner and render options" width="100%">
+  <figcaption>Wide cockpit view with scanner, ASCII render options, and combat feedback.</figcaption>
+</figure>
 
 Run it with:
 
