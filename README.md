@@ -5,12 +5,12 @@ renderer.
 
 <figure>
   <img src="assets/screenshots/cockpit-help.svg" alt="Elite TUI cockpit help overlay" width="100%">
-  <figcaption>Compact cockpit view with the onboard controls overlay.</figcaption>
+  <figcaption>Wide 180-column cockpit view with the onboard controls overlay. <a href="assets/screenshots/cockpit-help.svg">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
   <img src="assets/screenshots/scanner-render-options.svg" alt="Elite TUI scanner and render options" width="100%">
-  <figcaption>Wide cockpit view with scanner, ASCII render options, and combat feedback.</figcaption>
+  <figcaption>Wide 180-column cockpit view with scanner, ASCII render options, and combat feedback. <a href="assets/screenshots/scanner-render-options.svg">Open full size</a>.</figcaption>
 </figure>
 
 Run it with:
