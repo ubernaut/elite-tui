@@ -1,23 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1620" height="918" viewBox="0 0 1620 918">
 <rect width="100%" height="100%" fill="#02030a"/>
 <style>text{font-family:"JetBrains Mono","Cascadia Mono","SFMono-Regular",Consolas,monospace;font-size:14px;dominant-baseline:text-before-edge;white-space:pre}</style>
-<text x="0" y="0" fill="#e8fbff">   ELITE TUI // NEON EXODUS  SCORE   0                                      &lt;&gt; FLIGHT // YELLOW &lt;&gt;                                    ASCII MIXED  EDGE ON  FILL ON  INV OFF</text>
+<text x="0" y="0" fill="#e8fbff">   ELITE TUI // NEON EXODUS  SCORE   0                                      &lt;&gt; FLIGHT // YELLOW &lt;&gt;                                    ASCII GLYPHS  EDGE ON  FILL OFF  INV OFF</text>
 <text x="999" y="17" fill="#e8fbff">[48;2;2;3;10m</text>
 <text x="1494" y="17" fill="#e8fbff">────────────╮</text>
 <text x="657" y="34" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="1494" y="34" fill="#e8fbff">/ LAVE      │</text>
 <text x="324" y="51" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="1440" y="51" fill="#e8fbff">                  │</text>
+<text x="1449" y="51" fill="#e8fbff">[7;142H          │</text>
 <text x="981" y="68" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="1494" y="68" fill="#e8fbff">○·×······   │</text>
+<text x="1494" y="68" fill="#e8fbff">··×······   │</text>
 <text x="639" y="85" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="1494" y="85" fill="#e8fbff">·········   │</text>
 <text x="306" y="102" fill="#e8fbff">[48;2;2;3;10m</text>
 <text x="1413" y="102" fill="#e8fbff">[38;2;46;162;164m    │</text>
 <text x="954" y="119" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="1494" y="119" fill="#e8fbff">·········   │</text>
-<text x="54" y="136" fill="#62b8bc">▃</text>
-<text x="324" y="136" fill="#62b8bc">▃</text>
 <text x="621" y="136" fill="#e8fbff">[48;2;2;3;10m</text>
 <text x="1494" y="136" fill="#e8fbff">·········   │</text>
 <text x="279" y="153" fill="#e8fbff">[38;2;46;162;164m</text>
@@ -26,265 +24,88 @@
 <text x="936" y="170" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="1494" y="170" fill="#e8fbff">·········   │</text>
 <text x="9" y="187" fill="#2ea2a4">                                                                                                 /</text>
-<text x="891" y="187" fill="#9ab7bd">▃</text>
-<text x="900" y="187" fill="#9bc1bf">▄</text>
-<text x="909" y="187" fill="#99c9c0">▄</text>
-<text x="918" y="187" fill="#95cfc2">▅</text>
-<text x="927" y="187" fill="#8fd5c3">▅</text>
-<text x="936" y="187" fill="#86d9c3">▆</text>
 <text x="945" y="187" fill="#5ec4b8">\</text>
 <text x="1494" y="187" fill="#e8fbff">·········   │</text>
-<text x="9" y="204" fill="#2ea2a4">                                                                                 /</text>
-<text x="756" y="204" fill="#9aafb5">▂▂</text>
-<text x="882" y="204" fill="#9aafbb">▂</text>
-<text x="891" y="204" fill="#9bafbb">▂</text>
-<text x="900" y="204" fill="#9ab8bd">▃</text>
-<text x="909" y="204" fill="#97bfbe">▃</text>
-<text x="918" y="204" fill="#92c6bf">▄</text>
-<text x="927" y="204" fill="#8dccc1">▄</text>
-<text x="936" y="204" fill="#84d1c1">▅</text>
-<text x="945" y="204" fill="#79d4c1">▅</text>
-<text x="1242" y="204" fill="#e8fbff">[3</text>
-<text x="1341" y="204" fill="#e8fbff">2;164m</text>
-<text x="1413" y="204" fill="#e8fbff">                     │</text>
-<text x="738" y="221" fill="#91a6ac">▂</text>
-<text x="747" y="221" fill="#cdb3bd">▄</text>
-<text x="756" y="221" fill="#6ea4a8">▁</text>
-<text x="765" y="221" fill="#74adb1">▁</text>
-<text x="774" y="221" fill="#cdb3bd">▄</text>
-<text x="783" y="221" fill="#b6b1b9">▃</text>
-<text x="792" y="221" fill="#2ea2a4">         \</text>
-<text x="882" y="221" fill="#93afbb">▂</text>
-<text x="891" y="221" fill="#94afbb">▂</text>
-<text x="900" y="221" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="1017" y="221" fill="#91afbb">▂</text>
-<text x="1026" y="221" fill="#8db2bb">▂</text>
-<text x="1035" y="221" fill="#89b9bc">▂</text>
-<text x="1044" y="221" fill="#82bfbd">▃</text>
-<text x="1053" y="221" fill="#78c4be">▃</text>
-<text x="1062" y="221" fill="#76c7be">▃</text>
-<text x="1071" y="221" fill="#2ea2a4">/</text>
+<text x="261" y="204" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1368" y="204" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1557" y="204" fill="#e8fbff">     │</text>
+<text x="297" y="221" fill="#2ea2a4">                                                                \</text>
+<text x="909" y="221" fill="#e8fbff">[38;2;141;178;187m</text>
+<text x="1116" y="221" fill="#2ea2a4">/</text>
 <text x="1503" y="221" fill="#e8fbff">ATION RNG  │</text>
-<text x="558" y="238" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="855" y="238" fill="#cdb3bd">▄</text>
-<text x="864" y="238" fill="#91a6ac">▂</text>
-<text x="882" y="238" fill="#b6b1b9">▃</text>
-<text x="891" y="238" fill="#91a6ac">▂</text>
-<text x="900" y="238" fill="#cdb3bd">▄</text>
+<text x="576" y="238" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="693" y="238" fill="#2ea2a4">          /</text>
+<text x="792" y="238" fill="#cdb3bd"> -</text>
 <text x="909" y="238" fill="#2ea2a4">          \</text>
-<text x="1008" y="238" fill="#80afba">▂</text>
-<text x="1017" y="238" fill="#81afba">▂</text>
-<text x="1026" y="238" fill="#7dafb9">▁</text>
-<text x="1035" y="238" fill="#75afb9">▁</text>
-<text x="1044" y="238" fill="#70aeb9">▁</text>
 <text x="1053" y="238" fill="#60a6ad">/</text>
-<text x="1062" y="238" fill="#2ea2a4">/</text>
-<text x="1494" y="238" fill="#e8fbff">            │</text>
-<text x="207" y="255" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="819" y="255" fill="#cdb3bd">▄</text>
-<text x="828" y="255" fill="#b6b1b9">▃</text>
-<text x="837" y="255" fill="#6ea4a8">▁</text>
-<text x="846" y="255" fill="#b6b1b9">▃</text>
-<text x="855" y="255" fill="#6ea4a8">▁</text>
-<text x="864" y="255" fill="#2ea2a4">\  \</text>
-<text x="900" y="255" fill="#b6b1b9">▃</text>
-<text x="909" y="255" fill="#cdb3bd">-</text>
-<text x="918" y="255" fill="#91a6ac">▂</text>
-<text x="927" y="255" fill="#2ea2a4"> /</text>
-<text x="1386" y="255" fill="#e8fbff">────────────────────────╯</text>
-<text x="234" y="272" fill="#68c2c6">▃</text>
-<text x="387" y="272" fill="#62b8bc">▃</text>
-<text x="666" y="272" fill="#b6b1b9">▃</text>
-<text x="675" y="272" fill="#cdb3bd">▄</text>
-<text x="693" y="272" fill="#cdb3bd">▄▄</text>
-<text x="855" y="272" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="117" y="289" fill="#68c3c6">▃</text>
-<text x="513" y="289" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="675" y="289" fill="#2ea2a4">                \  -/</text>
-<text x="1134" y="289" fill="#62b8bc">▃</text>
-<text x="180" y="306" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="1350" y="306" fill="#e8fbff">6;162;164m</text>
-<text x="657" y="323" fill="#3dcdd0">▅</text>
-<text x="684" y="323" fill="#36b9bc">▃</text>
-<text x="828" y="323" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="495" y="340" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="612" y="340" fill="#2ea2a4">                   |  \</text>
-<text x="153" y="357" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="315" y="357" fill="#2ea2a4">                                                      -</text>
-<text x="828" y="357" fill="#3ac4c6">▃</text>
-<text x="837" y="357" fill="#47ebee">▇</text>
-<text x="846" y="357" fill="#3dcdd0">▅</text>
-<text x="855" y="357" fill="#2ea2a4"> \         -</text>
-<text x="1125" y="357" fill="#b6b1b9">▃</text>
-<text x="1134" y="357" fill="#aca8af">▃</text>
-<text x="1143" y="357" fill="#9aafb5">▂</text>
-<text x="1152" y="357" fill="#aca8af">▃</text>
-<text x="1161" y="357" fill="#74adb1">▁</text>
-<text x="1359" y="357" fill="#e8fbff">6;162;164m</text>
-<text x="9" y="374" fill="#2ea2a4">                                                -  -              ----</text>
-<text x="639" y="374" fill="#43dfe2">\</text>
-<text x="648" y="374" fill="#3dcdd0">▅</text>
-<text x="657" y="374" fill="#2ea2a4">    -\</text>
-<text x="711" y="374" fill="#36b9bc">▃</text>
-<text x="720" y="374" fill="#2ea2a4">---</text>
-<text x="783" y="374" fill="#9acab4">▄</text>
-<text x="792" y="374" fill="#acccae">▆</text>
-<text x="801" y="374" fill="#e8fbff">[38;2;182;216;184m▆</text>
-<text x="972" y="374" fill="#91c0ab">▄</text>
-<text x="981" y="374" fill="#9acab4">▄</text>
-<text x="1134" y="374" fill="#cdb3bd">▄</text>
-<text x="1143" y="374" fill="#b6b1b9">▃▃</text>
-<text x="1161" y="374" fill="#9bb5cf">▃</text>
-<text x="1170" y="374" fill="#b6bccc">▄</text>
-<text x="1179" y="374" fill="#91a6ac">▂</text>
-<text x="9" y="391" fill="#2ea2a4">                                            /</text>
-<text x="414" y="391" fill="#34b1c4">▁</text>
-<text x="423" y="391" fill="#35b4c7">▁</text>
-<text x="432" y="391" fill="#35b5c9">▁</text>
-<text x="441" y="391" fill="#35b6cb">▁</text>
-<text x="450" y="391" fill="#35b7cd">▂</text>
-<text x="459" y="391" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="576" y="391" fill="#35b8ce">▂▂</text>
-<text x="594" y="391" fill="#34b8cd">▂</text>
-<text x="603" y="391" fill="#33b7cb">▂</text>
-<text x="612" y="391" fill="#32b1bb">▁</text>
-<text x="621" y="391" fill="#2ea2a4">\              \</text>
-<text x="765" y="391" fill="#36b9bc">\</text>
-<text x="774" y="391" fill="#2ea2a4">\|</text>
-<text x="828" y="391" fill="#41d9db">▅</text>
-<text x="900" y="391" fill="#b6d8b8">\</text>
-<text x="909" y="391" fill="#91c0ab">▄▄</text>
-<text x="936" y="391" fill="#9acab4">▄</text>
-<text x="945" y="391" fill="#2ea2a4">                \</text>
-<text x="1098" y="391" fill="#91a6ac">▂</text>
-<text x="1107" y="391" fill="#cdb3bd">▄</text>
-<text x="1116" y="391" fill="#91a6ac">▂</text>
-<text x="1125" y="391" fill="#2ea2a4"> /</text>
-<text x="108" y="408" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="270" y="408" fill="#2ea2a4">                              /</text>
-<text x="549" y="408" fill="#3bb0c3">▁</text>
-<text x="558" y="408" fill="#4bb2c8">▁</text>
-<text x="567" y="408" fill="#52b4cb">▂</text>
-<text x="576" y="408" fill="#50b5cd">▂</text>
-<text x="585" y="408" fill="#49b6d1">▂</text>
-<text x="594" y="408" fill="#44b8d7">▂</text>
-<text x="603" y="408" fill="#43b9df">▂</text>
-<text x="612" y="408" fill="#45bae7">▂</text>
-<text x="621" y="408" fill="#46bbea">▂</text>
-<text x="630" y="408" fill="#44bbe7">▂</text>
-<text x="639" y="408" fill="#3fbadf">▂</text>
-<text x="648" y="408" fill="#39b9d4">▂</text>
-<text x="657" y="408" fill="#34b8cc">▂</text>
+<text x="234" y="255" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="828" y="255" fill="#2ea2a4">                      -</text>
+<text x="1341" y="255" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1530" y="255" fill="#e8fbff">────────╯</text>
+<text x="630" y="272" fill="#2ea2a4">    \</text>
+<text x="711" y="272" fill="#2ea2a4">/</text>
+<text x="882" y="272" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="549" y="289" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="207" y="306" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="323" fill="#2ea2a4">                                                                       /</text>
+<text x="657" y="323" fill="#36b9bc">/</text>
+<text x="666" y="323" fill="#2ea2a4">  \</text>
+<text x="756" y="323" fill="#2ea2a4">\</text>
+<text x="864" y="323" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="522" y="340" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="684" y="340" fill="#2ea2a4">           // //</text>
+<text x="873" y="340" fill="#cdd9bc">-</text>
+<text x="918" y="340" fill="#2ea2a4">                      -</text>
+<text x="9" y="357" fill="#2ea2a4">                    [0m</text>
+<text x="657" y="357" fill="#2ea2a4">  //</text>
+<text x="972" y="357" fill="#74adb1">/</text>
+<text x="1026" y="357" fill="#2ea2a4">\</text>
+<text x="9" y="374" fill="#2ea2a4">                                                -  -              ---\</text>
+<text x="684" y="374" fill="#41d9db">/</text>
+<text x="837" y="374" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="495" y="391" fill="#e8fbff">[38;2;50;177;187m</text>
+<text x="657" y="391" fill="#2ea2a4">\              \\</text>
+<text x="828" y="391" fill="#2ea2a4">////  -                       \</text>
+<text x="1116" y="391" fill="#cdb3bd"> -</text>
+<text x="1143" y="391" fill="#2ea2a4">/</text>
+<text x="153" y="408" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="432" y="408" fill="#2ea2a4">            /</text>
 <text x="666" y="408" fill="#33b3c2">\</text>
-<text x="675" y="408" fill="#2ea2a4">              \</text>
-<text x="810" y="408" fill="#47ebee">\</text>
-<text x="819" y="408" fill="#41d9db">▅</text>
-<text x="828" y="408" fill="#3dcdd0">▅</text>
-<text x="837" y="408" fill="#2ea2a4">             -</text>
-<text x="1341" y="408" fill="#e8fbff">62;164m</text>
-<text x="9" y="425" fill="#2ea2a4">                                         /</text>
-<text x="387" y="425" fill="#cde4bb">█</text>
-<text x="396" y="425" fill="#bbd9bf">▇</text>
-<text x="405" y="425" fill="#cde4bb">█</text>
-<text x="414" y="425" fill="#7eb4d2">▂</text>
-<text x="423" y="425" fill="#72b5d3">▂</text>
-<text x="432" y="425" fill="#63b7d8">▂</text>
-<text x="441" y="425" fill="#56b9e2">▂</text>
-<text x="450" y="425" fill="#51baef">▂</text>
-<text x="459" y="425" fill="#52bcfa">▃</text>
-<text x="468" y="425" fill="#53bdff">▃</text>
-<text x="477" y="425" fill="#52bdff">▃</text>
-<text x="486" y="425" fill="#4cbcf4">▃</text>
-<text x="495" y="425" fill="#43bbe4">▂</text>
-<text x="504" y="425" fill="#39b9d5">▂</text>
-<text x="513" y="425" fill="#34b7cc">▂</text>
+<text x="675" y="408" fill="#2ea2a4">               \\ /</text>
+<text x="1152" y="408" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="9" y="425" fill="#2ea2a4">                                       /</text>
 <text x="522" y="425" fill="#33b3c1">\</text>
-<text x="747" y="425" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="9" y="442" fill="#2ea2a4">                                        |</text>
-<text x="378" y="442" fill="#cde4bb">█</text>
-<text x="387" y="442" fill="#64afc5">▁</text>
-<text x="396" y="442" fill="#adcdc4">▅</text>
-<text x="405" y="442" fill="#cde4bb">█</text>
-<text x="414" y="442" fill="#79b5d3">▂</text>
-<text x="423" y="442" fill="#66b6d6">▂</text>
-<text x="432" y="442" fill="#56b7dd">▂</text>
-<text x="441" y="442" fill="#4eb9e7">▂</text>
-<text x="450" y="442" fill="#4dbaf0">▂</text>
-<text x="459" y="442" fill="#4ebbf6">▃</text>
-<text x="468" y="442" fill="#4dbbf4">▃</text>
-<text x="477" y="442" fill="#48bbec">▂</text>
-<text x="486" y="442" fill="#41b9e0">▂</text>
-<text x="495" y="442" fill="#39b8d3">▂</text>
-<text x="504" y="442" fill="#34b7cb">▂</text>
-<text x="513" y="442" fill="#33b5c7">▁</text>
-<text x="63" y="459" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="531" y="459" fill="#cde4bb">██</text>
-<text x="549" y="459" fill="#a7ccc1">▅</text>
-<text x="558" y="459" fill="#a8cdc3">▅</text>
-<text x="567" y="459" fill="#bbd9bf">/</text>
-<text x="576" y="459" fill="#63b3cb">▂</text>
-<text x="585" y="459" fill="#53b4cc">▂</text>
-<text x="594" y="459" fill="#47b5cf">▂</text>
-<text x="603" y="459" fill="#40b6d3">▂</text>
-<text x="612" y="459" fill="#3eb7d7">▂</text>
-<text x="621" y="459" fill="#3eb7d9">▂</text>
-<text x="630" y="459" fill="#3db8d9">▂</text>
-<text x="639" y="459" fill="#3bb7d5">▂</text>
-<text x="648" y="459" fill="#38b7cf">▂</text>
-<text x="657" y="459" fill="#35b6ca">▁</text>
-<text x="666" y="459" fill="#33b5c7">▁</text>
-<text x="675" y="459" fill="#33b3c4">▁</text>
-<text x="9" y="476" fill="#2ea2a4">                                         \</text>
-<text x="387" y="476" fill="#39adbd">▁</text>
-<text x="396" y="476" fill="#44adbe">▁</text>
-<text x="405" y="476" fill="#4aafc1">▁</text>
-<text x="414" y="476" fill="#49b0c3">▁</text>
-<text x="423" y="476" fill="#44b1c4">▁</text>
-<text x="432" y="476" fill="#3db2c5">▁</text>
-<text x="441" y="476" fill="#38b3c5">▁</text>
-<text x="450" y="476" fill="#36b3c6">▁</text>
-<text x="459" y="476" fill="#35b4c7">▁</text>
-<text x="468" y="476" fill="#35b4c8">▁</text>
-<text x="477" y="476" fill="#34b4c7">▁▁</text>
-<text x="495" y="476" fill="#33b4c6">▁</text>
-<text x="504" y="476" fill="#33b4c4">▁</text>
-<text x="513" y="476" fill="#33b2c3">▁</text>
+<text x="468" y="442" fill="#e8fbff">[38;2;78;187;246m</text>
+<text x="135" y="459" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1125" y="459" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="9" y="476" fill="#2ea2a4">                                        -</text>
 <text x="522" y="476" fill="#2ea2a4">/</text>
-<text x="702" y="476" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="783" y="476" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="9" y="493" fill="#2ea2a4">                                          \</text>
-<text x="396" y="493" fill="#34adbc">▁</text>
-<text x="405" y="493" fill="#35adbc">▁▁</text>
-<text x="423" y="493" fill="#35aebe">▁</text>
-<text x="432" y="493" fill="#34afbf">▁</text>
-<text x="441" y="493" fill="#33b0c0">▁</text>
-<text x="450" y="493" fill="#33b1c0">▁</text>
-<text x="459" y="493" fill="#33b1c1">▁▁▁▁</text>
-<text x="495" y="493" fill="#33b1c0">▁</text>
-<text x="504" y="493" fill="#33afbe">▁</text>
-<text x="513" y="493" fill="#2ea2a4">/</text>
-<text x="18" y="510" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="180" y="510" fill="#2ea2a4">                                          \</text>
-<text x="576" y="510" fill="#33adbb">▁</text>
-<text x="585" y="510" fill="#33adba">▁▁▁▁▁▁</text>
-<text x="9" y="527" fill="#2ea2a4">                                                                          [0m</text>
-<text x="333" y="544" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="1485" y="544" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="1611" y="544" fill="#e8fbff">6</text>
-<text x="0" y="561" fill="#e8fbff">4</text>
-<text x="387" y="561" fill="#67c2c5">▃</text>
-<text x="990" y="561" fill="#e8fbff">[38;2;46;1</text>
-<text x="648" y="578" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="1080" y="578" fill="#68c2c6">▃</text>
-<text x="9" y="595" fill="#2ea2a4">                                  [0m</text>
-<text x="1332" y="595" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="1521" y="595" fill="#e8fbff">2;164m</text>
-<text x="972" y="612" fill="#e8fbff">[48;2;2;3</text>
-<text x="630" y="629" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="288" y="646" fill="#e8fbff">[38;2;46;162;164m</text>
-<text x="1440" y="646" fill="#e8fbff">[48;2;2;3;10m</text>
-<text x="945" y="663" fill="#e8fbff">[38;2;46;1</text>
+<text x="450" y="493" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="630" y="493" fill="#2ea2a4">/</text>
+<text x="1494" y="493" fill="#e8fbff">;2;3;10m</text>
+<text x="1575" y="493" fill="#e8fbff">62;16</text>
+<text x="0" y="510" fill="#e8fbff">4</text>
+<text x="108" y="510" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1098" y="510" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="527" fill="#2ea2a4">                                                 -</text>
+<text x="765" y="527" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="423" y="544" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="544" fill="#e8fbff">2;2;3;10m</text>
+<text x="90" y="561" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1080" y="561" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="738" y="578" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="405" y="595" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="595" fill="#e8fbff">2;164m</text>
+<text x="63" y="612" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="720" y="629" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="646" fill="#2ea2a4">                                          [0m</text>
+<text x="1494" y="646" fill="#e8fbff">162;164m</text>
+<text x="45" y="663" fill="#e8fbff">[38;2;46;162;164m</text>
 <text x="0" y="697" fill="#e8fbff"> ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</text>
-<text x="0" y="714" fill="#e8fbff"> │  SPD 16.5  THR 20  ALT 156  MISS 3  CR  180  CARGO  0/20  FUEL 6/7  ALERT YELLOW  LOCK CORIOLIS                                                                                │</text>
+<text x="0" y="714" fill="#e8fbff"> │  SPD 17.640;117H</text>
+<text x="477" y="714" fill="#e8fbff">  0/20  FUEL 6/7  ALERT YELLOW  LOCK CORIOLIS                                                                                │</text>
 <text x="0" y="731" fill="#e8fbff"> │                                                                                                                                                                                │</text>
 <text x="0" y="748" fill="#e8fbff"> │ SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▰▰  AFT ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                                                    │</text>
 <text x="0" y="765" fill="#e8fbff"> │ CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  HULL ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                               │</text>
@@ -292,7 +113,7 @@
 <text x="0" y="799" fill="#e8fbff"> │ MARKET  ZAONCE BUY 34  SELL 58  FUEL 18  IN FLIGHT                                                                                                                             │</text>
 <text x="0" y="816" fill="#e8fbff"> │ TRADE   B buy cargo  V sell cargo  R refuel  H jump                                                                                                                            │</text>
 <text x="0" y="833" fill="#e8fbff"> │ COMBAT  Space laser  M missile  C dock  ? help  1/2/3 ASCII  E/F/I render  Q quit                                                                                              │</text>
-<text x="0" y="850" fill="#e8fbff"> │                                                                                                                                                                                │</text>
+<text x="0" y="850" fill="#e8fbff"> │ MOUSE   Left-drag look  Wheel throttle  Right-click target                                                                                                                     │</text>
 <text x="0" y="867" fill="#e8fbff"> │ &gt;&gt; WITCHSPACE EXIT: ZAONCE                                                                                                                                                     │</text>
-<text x="0" y="884" fill="#e8fbff"> ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</text>
+<text x="0" y="884" fill="#e8fbff"> ╰───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯╯</text>
 </svg>

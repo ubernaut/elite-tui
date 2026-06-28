@@ -28,6 +28,7 @@ import {
   emptyStyle,
   Frame,
   handleInput,
+  handleMouseControls,
   Signal,
   Text,
   ThreeAscii,
@@ -187,7 +188,7 @@ const hud = {
   title: new Signal(""),
   mode: new Signal(""),
   status: new Signal(""),
-  gauges: Array.from({ length: 6 }, () => new Signal("")),
+  gauges: Array.from({ length: 7 }, () => new Signal("")),
   scanner: Array.from({ length: 8 }, () => new Signal("")),
   target: new Signal(""),
   message: new Signal(""),
@@ -219,6 +220,7 @@ const tui = new Tui({
 });
 
 void handleInput(tui);
+handleMouseControls(tui);
 tui.dispatch();
 tui.run();
 tui.on("destroy", () => sound.dispose());
@@ -453,6 +455,7 @@ function buildHud(): void {
     "NEON EXODUS FLIGHT DECK",
     "? hide/show   Q quit   P pause",
     "ARROWS pitch/roll     A/D yaw",
+    "Mouse drag look  Wheel throttle",
     "W/S throttle    Space pulse laser",
     "M missile       C dock/refit",
     "B buy  V sell   R refuel",
@@ -682,6 +685,34 @@ function bindKeys(): void {
         break;
     }
 
+    refreshHud();
+  });
+
+  tui.on("mousePress", (event) => {
+    if (!inFlightView(event.x, event.y) || event.ctrl || event.meta || event.shift) return;
+
+    if (event.drag && event.button === 0) {
+      state.yaw = clamp(state.yaw + event.movementX * 0.035, -1, 1);
+      state.pitch = clamp(state.pitch - event.movementY * 0.04, -1, 1);
+      state.message = "MOUSELOOK VECTORING";
+      refreshHud();
+      return;
+    }
+
+    if (!event.release && event.button === 2) {
+      state.targetIndex = (state.targetIndex + 1) % targets.length;
+      state.message = `TARGET ${activeTarget().id}`;
+      sound.play("lock");
+      refreshHud();
+    }
+  });
+
+  tui.on("mouseScroll", (event) => {
+    if (!inFlightView(event.x, event.y) || event.ctrl || event.meta || event.shift) return;
+
+    state.throttle = clamp(state.throttle - event.scroll * 4, 0, MAX_SPEED);
+    state.message = event.scroll < 0 ? "MOUSE WHEEL THROTTLE OPEN" : "MOUSE WHEEL THROTTLE CLOSED";
+    sound.play("blip");
     refreshHud();
   });
 }
@@ -1011,6 +1042,7 @@ function refreshHud(): void {
     }  FUEL ${String(market.fuel).padStart(2)}  ${state.docked ? "DOCKED" : "IN FLIGHT"}`,
     `TRADE   B buy cargo  V sell cargo  R refuel  H jump`,
     `COMBAT  Space laser  M missile  C dock  ? help  1/2/3 ASCII  E/F/I render  Q quit`,
+    `MOUSE   Left-drag look  Wheel throttle  Right-click target`,
   ].forEach((line, index) => {
     hud.gauges[index]!.value = clearLine(line);
   });
@@ -1147,6 +1179,11 @@ function activeTarget(): Target {
 
 function currentSystem(): (typeof systems)[number] {
   return systems[state.systemIndex] ?? systems[0]!;
+}
+
+function inFlightView(x: number, y: number): boolean {
+  const rect = ascii.rectangle.value;
+  return x >= rect.column && x < rect.column + rect.width && y >= rect.row && y < rect.row + rect.height;
 }
 
 function bar(value: number, width = 12): string {

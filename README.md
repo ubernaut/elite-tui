@@ -33,6 +33,9 @@ Controls:
 
 - Arrow keys: pitch and roll
 - `A` / `D`: yaw
+- Left mouse drag in the flight view: mouselook pitch and yaw
+- Mouse wheel in the flight view: throttle
+- Right click in the flight view: cycle target
 - `W` / `S`: throttle
 - Space: pulse laser
 - `M`: fire missile
