@@ -1,0 +1,11 @@
+{
+  "tasks": {
+    "start": "deno run --allow-env --allow-read --allow-sys src/main.ts",
+    "check": "deno check src/main.ts",
+    "fmt": "deno fmt src"
+  },
+  "fmt": {
+    "lineWidth": 120
+  },
+  "lock": false
+}
