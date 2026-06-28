@@ -1,101 +1,135 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3144" height="1716" viewBox="0 0 3144 1716" role="img" aria-labelledby="title desc">
-  <title id="title">Live terminal capture: ASCII render options changed</title>
-  <desc id="desc">Actual 180x54 terminal capture after switching to glyph ASCII mode and toggling fill in the running game.</desc>
-  <rect width="100%" height="100%" fill="#02030a"/>
-  <rect x="20" y="20" width="3104" height="1676" rx="18" fill="#050915" stroke="#137d91" stroke-width="3"/>
-  <g font-family="JetBrains Mono, Cascadia Mono, Fira Mono, Consolas, monospace" font-size="23" xml:space="preserve">
-    <text x="42" y="48" fill="#e8fbff">   ELITE TUI // NEON EXODUS  SCORE   0                                      !! FLIGHT // RED !! &lt;&gt;                                    ASCII GLYPHS  EDGE ON  FILL OFF  INV OFF</text>
-    <text x="59" y="78" fill="#2ea2a4">                                                                                  /</text>
-    <text x="1555" y="78" fill="#91a6ac">-</text>
-    <text x="2575" y="78" fill="#e8fbff">╭────────────────────────────╮</text>
-    <text x="2575" y="108" fill="#e8fbff">│ LOCAL SCANNER // LAVE      │</text>
-    <text x="1572" y="138" fill="#91a6ac"> -</text>
-    <text x="1674" y="138" fill="#aca8af">/</text>
-    <text x="2575" y="138" fill="#e8fbff">│                            │</text>
-    <text x="59" y="168" fill="#2ea2a4">                                                                                   \</text>
-    <text x="1487" y="168" fill="#b6b1b9">\</text>
-    <text x="2575" y="168" fill="#e8fbff">│ ···········×◆···○·······   │</text>
-    <text x="1572" y="198" fill="#9aafb5">-</text>
-    <text x="1589" y="198" fill="#cdb3bd">-</text>
-    <text x="1623" y="198" fill="#2ea2a4"> /</text>
-    <text x="2575" y="198" fill="#e8fbff">│ ······×·················   │</text>
-    <text x="2575" y="228" fill="#e8fbff">│ ·············×··○·······   │</text>
-    <text x="2575" y="258" fill="#e8fbff">│ ························   │</text>
-    <text x="2575" y="288" fill="#e8fbff">│ ············▲···········   │</text>
-    <text x="2575" y="318" fill="#e8fbff">│ ························   │</text>
-    <text x="2575" y="348" fill="#e8fbff">│ ························   │</text>
-    <text x="1657" y="378" fill="#2ea2a4">     /</text>
-    <text x="1776" y="378" fill="#95c8c0">-</text>
-    <text x="1793" y="378" fill="#93cfc1">-</text>
-    <text x="1810" y="378" fill="#8dd4c2">-</text>
-    <text x="2575" y="378" fill="#e8fbff">│ ························   │</text>
-    <text x="1725" y="408" fill="#86aeb7">/</text>
-    <text x="1861" y="408" fill="#6dcebd">\</text>
-    <text x="2575" y="408" fill="#e8fbff">│                            │</text>
-    <text x="1776" y="438" fill="#cde4bb">-</text>
-    <text x="2575" y="438" fill="#e8fbff">│ LOCK CORIOLIS STATION RNG  │</text>
-    <text x="1861" y="468" fill="#45a7a8">/</text>
-    <text x="2575" y="468" fill="#e8fbff">│                            │</text>
-    <text x="2575" y="498" fill="#e8fbff">╰────────────────────────────╯</text>
-    <text x="59" y="528" fill="#2ea2a4">                                                                     -                             \</text>
-    <text x="1776" y="528" fill="#cde4bb">  -</text>
-    <text x="1827" y="528" fill="#2ea2a4"> /</text>
-    <text x="807" y="618" fill="#2ea2a4">                       \</text>
-    <text x="1232" y="618" fill="#aca8af">-</text>
-    <text x="1266" y="618" fill="#2ea2a4">/</text>
-    <text x="59" y="678" fill="#2ea2a4">                                                                     /</text>
-    <text x="1266" y="678" fill="#2ea2a4">//</text>
-    <text x="59" y="708" fill="#2ea2a4">                                                                      /</text>
-    <text x="1283" y="708" fill="#2ea2a4">/</text>
-    <text x="59" y="738" fill="#2ea2a4">                                                -                 --\</text>
-    <text x="1402" y="738" fill="#2ea2a4"> --</text>
-    <text x="960" y="768" fill="#2ea2a4"> \</text>
-    <text x="1334" y="768" fill="#36b9bc">/</text>
-    <text x="1351" y="768" fill="#2ea2a4">/</text>
-    <text x="2167" y="768" fill="#9acab4">-</text>
-    <text x="2286" y="768" fill="#2ea2a4"> \</text>
-    <text x="59" y="798" fill="#2ea2a4">                                         /</text>
-    <text x="994" y="798" fill="#2fa4ab">\</text>
-    <text x="1011" y="798" fill="#2ea2a4">                 \</text>
-    <text x="1351" y="798" fill="#2ea2a4">/</text>
-    <text x="2320" y="798" fill="#2ea2a4">\</text>
-    <text x="739" y="828" fill="#35acba">/</text>
-    <text x="1011" y="828" fill="#33b3c1">\</text>
-    <text x="1028" y="858" fill="#2ea2a4">                                                               \</text>
-    <text x="1028" y="888" fill="#2ea2a4">                                                                \</text>
-    <text x="2133" y="888" fill="#b6d8b8">\</text>
-    <text x="59" y="918" fill="#2ea2a4">                                       \</text>
-    <text x="1011" y="918" fill="#33b2c1">/</text>
-    <text x="2201" y="918" fill="#cde4bb">---</text>
-    <text x="2269" y="918" fill="#2ea2a4"> /</text>
-    <text x="59" y="948" fill="#2ea2a4">                                        \</text>
-    <text x="994" y="948" fill="#2fa5b1">/</text>
-    <text x="1011" y="948" fill="#2ea2a4">/</text>
-    <text x="178" y="978" fill="#cdb3bd">-</text>
-    <text x="195" y="978" fill="#91a6ac">-</text>
-    <text x="229" y="978" fill="#2ea2a4">-</text>
-    <text x="280" y="978" fill="#2ea2a4">                            \</text>
-    <text x="773" y="978" fill="#2fa3ab">\</text>
-    <text x="977" y="978" fill="#2ea2a4">/</text>
-    <text x="59" y="1008" fill="#2ea2a4">   /</text>
-    <text x="314" y="1008" fill="#2ea2a4">\</text>
-    <text x="858" y="1008" fill="#2fa3aa">--</text>
-    <text x="59" y="1038" fill="#2ea2a4">  |</text>
-    <text x="59" y="1068" fill="#2ea2a4">  |</text>
-    <text x="178" y="1068" fill="#2ea2a4">-</text>
-    <text x="110" y="1098" fill="#b6b1b9">\</text>
-    <text x="297" y="1098" fill="#2ea2a4">/</text>
-    <text x="59" y="1128" fill="#2ea2a4">     -</text>
-    <text x="263" y="1128" fill="#2ea2a4">/</text>
-    <text x="42" y="1338" fill="#e8fbff"> ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</text>
-    <text x="42" y="1368" fill="#e8fbff"> │  SPD 18.0  THR 18  ALT 156  MISS 3  CR    0  ALERT RED  LOCK CORIOLISLIS                                                                                                       │</text>
-    <text x="42" y="1398" fill="#e8fbff"> │                                                                                                                                                                                │</text>
-    <text x="42" y="1428" fill="#e8fbff"> │ SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▰▰  AFT ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                                                    │</text>
-    <text x="42" y="1458" fill="#e8fbff"> │ CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  HULL ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                               │</text>
-    <text x="42" y="1488" fill="#e8fbff"> │ VECTOR  PIT ────◆────  ROL ────◆────  YAW ────◆────                                                                                                                            │</text>
-    <text x="42" y="1518" fill="#e8fbff"> │ M missile  C dock  ? help  1 blocks 2 glyphs 3 mixed  E/F/I render  Q quit                                                                                                     │</text>
-    <text x="42" y="1548" fill="#e8fbff"> │                                                                                                                                                                                │</text>
-    <text x="42" y="1578" fill="#e8fbff"> │ &gt;&gt; ASCII FILL OFFGLYPHSRBITAL                                                                                                                                                  │</text>
-    <text x="42" y="1608" fill="#e8fbff"> ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="1620" height="918" viewBox="0 0 1620 918">
+<rect width="100%" height="100%" fill="#02030a"/>
+<style>text{font-family:"JetBrains Mono","Cascadia Mono","SFMono-Regular",Consolas,monospace;font-size:14px;dominant-baseline:text-before-edge;white-space:pre}</style>
+<text x="0" y="0" fill="#e8fbff">   ELITE TUI // NEON EXODUS  SCORE   0                                      &lt;&gt; FLIGHT // YELLOW &lt;&gt;                                    ASCII GLYPHS  EDGE ON  FILL OFF  INV OFF</text>
+<text x="999" y="17" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="17" fill="#e8fbff">────────────╮</text>
+<text x="657" y="34" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="34" fill="#e8fbff">/ LAVE      │</text>
+<text x="324" y="51" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1449" y="51" fill="#e8fbff">[7;142H          │</text>
+<text x="981" y="68" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="68" fill="#e8fbff">·○·······   │</text>
+<text x="639" y="85" fill="#e8fbff">[38;2;172;168;175m</text>
+<text x="810" y="85" fill="#b6b1b9"> \</text>
+<text x="828" y="85" fill="#2ea2a4">\</text>
+<text x="9" y="102" fill="#2ea2a4">                                 [0m</text>
+<text x="702" y="102" fill="#2ea2a4">\</text>
+<text x="1341" y="102" fill="#e8fbff">;2;3;10m</text>
+<text x="1458" y="102" fill="#e8fbff">10;141H;164m    │</text>
+<text x="639" y="119" fill="#cdb3bd"> -</text>
+<text x="954" y="119" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="119" fill="#e8fbff">·········   │</text>
+<text x="612" y="136" fill="#e8fbff">[38;2;154;175;181m</text>
+<text x="792" y="136" fill="#9aafb5">-</text>
+<text x="828" y="136" fill="#b6b1b9">/</text>
+<text x="9" y="153" fill="#2ea2a4">                                                                  \</text>
+<text x="621" y="153" fill="#aca8af">-</text>
+<text x="657" y="153" fill="#2ea2a4">//</text>
+<text x="1269" y="153" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1458" y="153" fill="#e8fbff">6H62;164m ···   │</text>
+<text x="9" y="170" fill="#2ea2a4">                                                                     -                              --</text>
+<text x="927" y="170" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="170" fill="#e8fbff">·········   │</text>
+<text x="594" y="187" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="711" y="187" fill="#2ea2a4">                                /</text>
+<text x="1062" y="187" fill="#5ec4b8">\</text>
+<text x="252" y="204" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1242" y="204" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="204" fill="#e8fbff">164m</text>
+<text x="1557" y="204" fill="#e8fbff">     │</text>
+<text x="9" y="221" fill="#2ea2a4">                                                                                                \</text>
+<text x="900" y="221" fill="#e8fbff">[38;2;145;175;187m</text>
+<text x="1116" y="221" fill="#2ea2a4">/</text>
+<text x="1503" y="221" fill="#e8fbff">ATION RNG  │</text>
+<text x="567" y="238" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="684" y="238" fill="#2ea2a4">                                   \</text>
+<text x="1053" y="238" fill="#60a6ad">/</text>
+<text x="1062" y="238" fill="#2ea2a4">/</text>
+<text x="225" y="255" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="387" y="255" fill="#2ea2a4">                                                                    /</text>
+<text x="1044" y="255" fill="#2ea2a4">  -</text>
+<text x="1215" y="255" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="255" fill="#e8fbff">────────────╯</text>
+<text x="666" y="272" fill="#2ea2a4">\                   |</text>
+<text x="873" y="272" fill="#e8fbff">[38;2;154;204;194m</text>
+<text x="540" y="289" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="657" y="289" fill="#2ea2a4">         \</text>
+<text x="747" y="289" fill="#b6b1b9">\</text>
+<text x="882" y="289" fill="#2ea2a4">          \</text>
+<text x="990" y="289" fill="#cde4bb">-</text>
+<text x="999" y="289" fill="#2ea2a4"> /</text>
+<text x="198" y="306" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="360" y="306" fill="#2ea2a4">                                               \  /</text>
+<text x="1188" y="306" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="684" y="323" fill="#3dcdd0">\</text>
+<text x="693" y="323" fill="#2ea2a4">\</text>
+<text x="855" y="323" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1071" y="323" fill="#9acab4">--</text>
+<text x="1494" y="323" fill="#e8fbff">6;162;164m</text>
+<text x="513" y="340" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="675" y="340" fill="#2ea2a4">                |</text>
+<text x="846" y="340" fill="#2ea2a4">\</text>
+<text x="864" y="340" fill="#2ea2a4">                       /</text>
+<text x="1143" y="340" fill="#2ea2a4">\</text>
+<text x="9" y="357" fill="#2ea2a4">                   [0m</text>
+<text x="1026" y="357" fill="#2ea2a4">                [0m</text>
+<text x="9" y="374" fill="#2ea2a4">                                                -  -</text>
+<text x="504" y="374" fill="#2ea2a4">           ---</text>
+<text x="675" y="374" fill="#2ea2a4">  -</text>
+<text x="720" y="374" fill="#2ea2a4"> --</text>
+<text x="828" y="374" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1143" y="374" fill="#2ea2a4">/</text>
+<text x="1494" y="374" fill="#e8fbff">6;162;164m</text>
+<text x="0" y="391" fill="#2ea2a4">                                             /</text>
+<text x="486" y="391" fill="#e8fbff">[38;2;51;183;203m</text>
+<text x="657" y="391" fill="#2ea2a4">\              \</text>
+<text x="819" y="391" fill="#2ea2a4">|  /</text>
+<text x="1107" y="391" fill="#b6d8b8">-</text>
+<text x="153" y="408" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="270" y="408" fill="#2ea2a4">                          /</text>
+<text x="630" y="408" fill="#33b3c2">\</text>
+<text x="639" y="408" fill="#2ea2a4">               \</text>
+<text x="801" y="408" fill="#2ea2a4">/</text>
+<text x="1143" y="408" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="522" y="425" fill="#33b3c1">\</text>
+<text x="801" y="425" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="442" fill="#2ea2a4">                                     /</text>
+<text x="9" y="476" fill="#2ea2a4">                                     \</text>
+<text x="522" y="476" fill="#2ea2a4">/</text>
+<text x="774" y="476" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="493" fill="#2ea2a4">                                       -</text>
+<text x="441" y="493" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="630" y="493" fill="#2ea2a4">/</text>
+<text x="1494" y="493" fill="#e8fbff">38;2;46;162;16</text>
+<text x="0" y="510" fill="#e8fbff">4</text>
+<text x="99" y="510" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="9" y="527" fill="#2ea2a4">                                                 -</text>
+<text x="756" y="527" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="414" y="544" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="544" fill="#e8fbff">;2;2;3;10m</text>
+<text x="1611" y="544" fill="#e8fbff">m</text>
+<text x="81" y="561" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1071" y="561" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="396" y="595" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1494" y="595" fill="#e8fbff">62;164m</text>
+<text x="0" y="612" fill="#2ea2a4">       [0m</text>
+<text x="1053" y="612" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="711" y="629" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="378" y="646" fill="#e8fbff">[48;2;2;3;10m</text>
+<text x="1494" y="646" fill="#e8fbff">;162;164m</text>
+<text x="36" y="663" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="1026" y="663" fill="#e8fbff">[38;2;46;162;164m</text>
+<text x="0" y="697" fill="#e8fbff"> ╭────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╮</text>
+<text x="0" y="714" fill="#e8fbff"> │  SPD 17.0  THR 18  ALT 156  MISS 3  CR  180  CARGO  0/20  FUEL 7/7  ALERT YELLOW  LOCK CORIOLIS                                                                                │</text>
+<text x="0" y="731" fill="#e8fbff"> │                                                                                                                                                                                │</text>
+<text x="0" y="748" fill="#e8fbff"> │ SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▰▰  AFT ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                                                    │</text>
+<text x="0" y="765" fill="#e8fbff"> │ CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  HULL ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰                                                                                                               │</text>
+<text x="0" y="782" fill="#e8fbff"> │ VECTOR  PIT ────◆────  ROL ────◆────  YAW ────◆────                                                                                                                            │</text>
+<text x="0" y="799" fill="#e8fbff"> │ MARKET  LAVE   BUY 28  SELL 42  FUEL 14  IN FLIGHT                                                                                                                             │</text>
+<text x="0" y="816" fill="#e8fbff"> │ TRADE   B buy cargo  V sell cargo  R refuel  H jump                                                                                                                            │</text>
+<text x="0" y="833" fill="#e8fbff"> │ COMBAT  Space laser  M missile  C dock  ? help  1/2/3 ASCII  E/F/I render  Q quit                                                                                              │</text>
+<text x="0" y="850" fill="#e8fbff"> │                                                                                                                                                                                │</text>
+<text x="0" y="867" fill="#e8fbff"> │ &gt;&gt; ASCII FILL OFFIDDENORBITAL                                                                                                                                                  │</text>
+<text x="0" y="884" fill="#e8fbff"> ╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯</text>
 </svg>

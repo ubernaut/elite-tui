@@ -37,11 +37,12 @@ import type { TextRectangle } from "../vendor/deno_tui/src/canvas/text.ts";
 import type { TerminalGlyphStyle } from "../vendor/deno_tui/src/three_ascii/glyphs.ts";
 
 const VIEW_MIN_WIDTH = 44;
-const DASHBOARD_HEIGHT = 10;
+const DASHBOARD_HEIGHT = 12;
 const SCANNER_WIDTH = 28;
 const MAX_SPEED = 36;
 const TARGET_COUNT = 5;
 const ENEMY_FIRE_RANGE = 58;
+const HOLD_CAPACITY = 20;
 const audioEncoder = new TextEncoder();
 
 const neon = {
@@ -99,6 +100,9 @@ interface ShipState {
   missiles: number;
   score: number;
   credits: number;
+  cargo: number;
+  fuel: number;
+  systemIndex: number;
   alert: Alert;
   paused: boolean;
   docked: boolean;
@@ -119,7 +123,10 @@ const state: ShipState = {
   laserHeat: 0,
   missiles: 3,
   score: 0,
-  credits: 0,
+  credits: 180,
+  cargo: 0,
+  fuel: 7,
+  systemIndex: 0,
   alert: "GREEN",
   paused: false,
   docked: false,
@@ -180,12 +187,19 @@ const hud = {
   title: new Signal(""),
   mode: new Signal(""),
   status: new Signal(""),
-  gauges: Array.from({ length: 4 }, () => new Signal("")),
+  gauges: Array.from({ length: 6 }, () => new Signal("")),
   scanner: Array.from({ length: 8 }, () => new Signal("")),
   target: new Signal(""),
   message: new Signal(""),
   render: new Signal(""),
 };
+
+const systems = [
+  { name: "LAVE", buy: 28, sell: 42, fuel: 14 },
+  { name: "ZAONCE", buy: 34, sell: 58, fuel: 18 },
+  { name: "REORTE", buy: 22, sell: 37, fuel: 12 },
+  { name: "LEESTI", buy: 46, sell: 71, fuel: 21 },
+];
 
 const textRect = (compute: () => TextRectangle): Computed<TextRectangle> => new Computed<TextRectangle>(compute);
 const helpVisible = new Signal(true);
@@ -415,7 +429,7 @@ function buildHud(): void {
     column: 3,
     row: 2,
     width: Math.min(48, Math.max(32, helpWidth())),
-    height: 10,
+    height: 11,
   }));
 
   new Box({
@@ -441,7 +455,8 @@ function buildHud(): void {
     "ARROWS pitch/roll     A/D yaw",
     "W/S throttle    Space pulse laser",
     "M missile       C dock/refit",
-    "Tab target      H hyperspace reset",
+    "B buy  V sell   R refuel",
+    "Tab target      H hyperspace jump",
     "ASCII 1 blocks  2 glyphs  3 mixed",
     "E edges  F fill  I invert luminance",
     "Scanner: ◆ lock × hostile ○ neutral",
@@ -450,7 +465,7 @@ function buildHud(): void {
   helpLines.forEach((line, index) => {
     new Text({
       parent: tui,
-      theme: { base: index === 0 ? style.render : index === 8 ? style.muted : style.text },
+      theme: { base: index === 0 ? style.render : index === helpLines.length - 1 ? style.muted : style.text },
       text: line,
       overwriteWidth: true,
       rectangle: textRect(() => ({
@@ -485,7 +500,7 @@ function buildHud(): void {
     overwriteWidth: true,
     rectangle: textRect(() => ({
       column: 3,
-      row: dashboardRect.value.row + 7,
+      row: dashboardRect.value.row + 9,
       width: Math.max(1, dashboardRect.value.width - 2),
     })),
     zIndex: 4,
@@ -634,6 +649,15 @@ function bindKeys(): void {
         break;
       case "c":
         attemptDock();
+        break;
+      case "b":
+        buyCargo();
+        break;
+      case "v":
+        sellCargo();
+        break;
+      case "r":
+        refuelShip();
         break;
       case "tab":
         state.targetIndex = (state.targetIndex + 1) % targets.length;
@@ -853,11 +877,92 @@ function attemptDock(): void {
   state.hull = 100;
   state.laserHeat = 0;
   state.missiles = 3;
-  state.message = "DOCKED: SHIP REFIT COMPLETE";
+  state.message = `DOCKED AT ${currentSystem().name}: MARKET ONLINE`;
   sound.play("hyperspace");
 }
 
+function buyCargo(): void {
+  if (!state.docked) {
+    state.message = "MARKET CLOSED - DOCK FIRST";
+    sound.play("error");
+    return;
+  }
+
+  const market = currentSystem();
+  if (state.cargo >= HOLD_CAPACITY) {
+    state.message = "CARGO HOLD FULL";
+    sound.play("error");
+    return;
+  }
+  if (state.credits < market.buy) {
+    state.message = "INSUFFICIENT CREDITS FOR CARGO";
+    sound.play("error");
+    return;
+  }
+
+  state.cargo += 1;
+  state.credits -= market.buy;
+  state.message = `BOUGHT 1T MACHINERY FOR ${market.buy} CR`;
+  sound.play("blip");
+}
+
+function sellCargo(): void {
+  if (!state.docked) {
+    state.message = "MARKET CLOSED - DOCK FIRST";
+    sound.play("error");
+    return;
+  }
+
+  const market = currentSystem();
+  if (state.cargo <= 0) {
+    state.message = "NO CARGO TO SELL";
+    sound.play("error");
+    return;
+  }
+
+  state.cargo -= 1;
+  state.credits += market.sell;
+  state.message = `SOLD 1T MACHINERY FOR ${market.sell} CR`;
+  sound.play("blip");
+}
+
+function refuelShip(): void {
+  if (!state.docked) {
+    state.message = "REFUEL UNAVAILABLE - DOCK FIRST";
+    sound.play("error");
+    return;
+  }
+
+  const market = currentSystem();
+  if (state.fuel >= 7) {
+    state.message = "FUEL TANK FULL";
+    sound.play("error");
+    return;
+  }
+  if (state.credits < market.fuel) {
+    state.message = "INSUFFICIENT CREDITS FOR FUEL";
+    sound.play("error");
+    return;
+  }
+
+  state.fuel += 1;
+  state.credits -= market.fuel;
+  state.message = `REFUELED 1LY FOR ${market.fuel} CR`;
+  sound.play("blip");
+}
+
 function hyperspaceReset(): void {
+  if (!state.docked && state.hull > 0 && state.fuel <= 0) {
+    state.message = "HYPERSPACE DENIED - NO FUEL";
+    sound.play("error");
+    return;
+  }
+
+  if (!state.docked && state.hull > 0) {
+    state.fuel = clamp(state.fuel - 1, 0, 7);
+    state.systemIndex = (state.systemIndex + 1) % systems.length;
+  }
+
   state.energy = 100;
   state.foreShield = 100;
   state.aftShield = 100;
@@ -874,21 +979,26 @@ function hyperspaceReset(): void {
     target.integrity = 100;
     placeRaider(target, Math.sin(index * 2.1) * 48, Math.cos(index * 1.8) * 20, -90 - index * 18);
   }
-  state.message = "WITCHSPACE EXIT COMPLETE";
+  state.message = `WITCHSPACE EXIT: ${currentSystem().name}`;
   sound.play("hyperspace");
 }
 
 function refreshHud(): void {
   const target = activeTarget();
+  const market = currentSystem();
   const range = Math.max(0, Math.round(Math.abs(target.group.position.z)));
   const alertSigil = state.alert === "RED" ? "!!" : state.alert === "YELLOW" ? "<>" : "--";
   hud.title.value = ` ELITE TUI // NEON EXODUS  SCORE ${String(state.score).padStart(3)} `;
   hud.mode.value = tui.rectangle.value.width >= 104
     ? `${alertSigil} ${state.paused ? "PAUSED" : "FLIGHT"} // ${state.alert} ${alertSigil}`
     : "";
-  hud.status.value = ` SPD ${state.speed.toFixed(1).padStart(4)}  THR ${state.throttle.toFixed(0).padStart(2)}  ` +
-    `ALT ${(planet.position.distanceTo(camera.position) - 14).toFixed(0).padStart(3)}  ` +
-    `MISS ${state.missiles}  CR ${state.credits.toString().padStart(4)}  ALERT ${state.alert}  LOCK ${target.id}`;
+  hud.status.value = clearLine(
+    ` SPD ${state.speed.toFixed(1).padStart(4)}  THR ${state.throttle.toFixed(0).padStart(2)}  ` +
+      `ALT ${(planet.position.distanceTo(camera.position) - 14).toFixed(0).padStart(3)}  ` +
+      `MISS ${state.missiles}  CR ${state.credits.toString().padStart(4)}  CARGO ${
+        String(state.cargo).padStart(2)
+      }/${HOLD_CAPACITY}  FUEL ${state.fuel}/7  ALERT ${state.alert}  LOCK ${target.id}`,
+  );
   hud.render.value = ` ASCII ${renderOptions.glyphStyle.toUpperCase()}  EDGE ${onOff(renderOptions.edges)}  FILL ${
     onOff(renderOptions.fill)
   }  INV ${onOff(renderOptions.invertLuminance)} `;
@@ -896,17 +1006,23 @@ function refreshHud(): void {
     `SHIELD  FORE ${bar(state.foreShield)}  AFT ${bar(state.aftShield)}`,
     `CORE    ENER ${bar(state.energy)}  HULL ${bar(state.hull)}  LASER ${bar(100 - state.laserHeat)}`,
     `VECTOR  PIT ${axisBar(state.pitch)}  ROL ${axisBar(state.roll)}  YAW ${axisBar(state.yaw)}`,
-    `M missile  C dock  ? help  1 blocks 2 glyphs 3 mixed  E/F/I render  Q quit`,
+    `MARKET  ${market.name.padEnd(6)} BUY ${String(market.buy).padStart(2)}  SELL ${
+      String(market.sell).padStart(2)
+    }  FUEL ${String(market.fuel).padStart(2)}  ${state.docked ? "DOCKED" : "IN FLIGHT"}`,
+    `TRADE   B buy cargo  V sell cargo  R refuel  H jump`,
+    `COMBAT  Space laser  M missile  C dock  ? help  1/2/3 ASCII  E/F/I render  Q quit`,
   ].forEach((line, index) => {
-    hud.gauges[index]!.value = line;
+    hud.gauges[index]!.value = clearLine(line);
   });
   scannerGrid().forEach((line, index) => {
     hud.scanner[index]!.value = line;
   });
-  hud.target.value = `LOCK ${target.id.padEnd(8)} ${target.kind.padEnd(7)} RNG ${String(range).padStart(3)} INT ${
-    target.integrity.toFixed(0).padStart(3)
-  }`;
-  hud.message.value = `>> ${state.message}`;
+  hud.target.value = clearLine(
+    `LOCK ${target.id.padEnd(8)} ${target.kind.padEnd(7)} RNG ${String(range).padStart(3)} INT ${
+      target.integrity.toFixed(0).padStart(3)
+    }`,
+  );
+  hud.message.value = clearLine(`>> ${state.message}`);
 }
 
 function scannerGrid(): string[] {
@@ -1029,6 +1145,10 @@ function activeTarget(): Target {
   return targets[state.targetIndex] ?? targets[0]!;
 }
 
+function currentSystem(): (typeof systems)[number] {
+  return systems[state.systemIndex] ?? systems[0]!;
+}
+
 function bar(value: number, width = 12): string {
   const filled = Math.round(clamp(value, 0, 100) / 100 * width);
   return `${"▰".repeat(filled)}${"▱".repeat(width - filled)}`;
@@ -1043,6 +1163,10 @@ function axisBar(value: number): string {
 
 function onOff(value: boolean): string {
   return value ? "ON" : "OFF";
+}
+
+function clearLine(value: string): string {
+  return value.padEnd(160);
 }
 
 function clamp(value: number, min: number, max: number): number {

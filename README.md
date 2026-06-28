@@ -19,8 +19,8 @@ renderer.
 </figure>
 
 <figure>
-  <img src="assets/screenshots/hyperspace-reset.svg" alt="Live Elite TUI hyperspace reset capture" width="100%">
-  <figcaption>Real 180x54 terminal capture after pressing <code>H</code> for hyperspace reset. <a href="assets/screenshots/hyperspace-reset.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/hyperspace-reset.svg" alt="Live Elite TUI hyperspace jump capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after pressing <code>H</code> for a fuel-consuming hyperspace jump. <a href="assets/screenshots/hyperspace-reset.svg">Open full size</a>.</figcaption>
 </figure>
 
 Run it with:
@@ -38,7 +38,9 @@ Controls:
 - `M`: fire missile
 - `Tab`: cycle target
 - `C`: dock and refit when locked on the station at low speed
-- `H`: hyperspace reset or reboot after hull breach
+- `B` / `V`: buy or sell cargo while docked
+- `R`: refuel while docked
+- `H`: hyperspace jump or reboot after hull breach
 - `P`: pause, or launch after docking
 - `?`: show or hide help
 - `1` / `2` / `3`: switch ASCII blocks, glyphs, or mixed mode
@@ -55,8 +57,11 @@ ELITE_TUI_SOUND=0 deno task start
 The scanner panel appears when the terminal has enough width and height; compact terminals prioritize the flight view,
 help overlay, and dashboard.
 
-Hostile raiders now return fire when they close to weapon range. Keep shields up, manage laser heat, use missiles for
-quick kills, and dock at the Coriolis station to restore hull, shields, energy, heat, and missile stores.
+Hostile raiders return fire when they close to weapon range. Keep shields up, manage laser heat, use missiles for quick
+kills, and dock at the Coriolis station to restore hull, shields, energy, heat, and missile stores.
+
+Docking also opens a small market loop. Buy machinery, jump to the next system, sell for a different local price, and
+refuel before leaving the station.
 
 The code intentionally does not copy NES Elite source, ROM, image, or ship data. It uses procedural Three.js geometry
 and a local vendored snapshot of `deno_tui`.
