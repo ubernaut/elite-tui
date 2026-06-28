@@ -3,7 +3,7 @@
     "start": "deno run --allow-env --allow-read --allow-sys src/main.ts",
     "check": "deno check src/main.ts",
     "web:check": "deno check src/web.ts",
-    "web:build": "rm -rf dist && mkdir -p dist && cp web/index.html dist/index.html && deno bundle --platform browser --minify src/web.ts -o dist/elite-tui.js",
+    "web:build": "rm -rf docs && mkdir -p docs && cp web/index.html docs/index.html && touch docs/.nojekyll && deno bundle --platform browser --minify src/web.ts -o docs/elite-tui.js",
     "web:start": "deno task web:build && deno run --allow-net --allow-read --allow-env scripts/serve_web.ts",
     "fmt": "deno fmt src web scripts"
   },

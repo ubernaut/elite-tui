@@ -28,9 +28,6 @@ jobs:
         with:
           deno-version: v2.x
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v6
-
       - name: Check browser build
         run: deno task web:check
 
@@ -40,7 +37,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: dist
+          path: docs
 
   deploy:
     name: Deploy

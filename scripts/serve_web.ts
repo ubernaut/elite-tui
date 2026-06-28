@@ -1,5 +1,5 @@
 const port = Number(Deno.env.get("PORT") ?? "8765");
-const root = new URL("../dist/", import.meta.url);
+const root = new URL("../docs/", import.meta.url);
 
 const contentTypes: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
