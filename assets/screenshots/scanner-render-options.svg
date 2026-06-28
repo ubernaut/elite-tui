@@ -34,11 +34,11 @@
   <text x="112" y="502" class="cyan" font-size="23">                              '-.  '----'  .-'                         ▄</text>
   <text x="112" y="530" class="cyan" font-size="23">                                  '------'              ▂                         ▃</text>
   <text x="112" y="558" class="cyanDim" font-size="23">         ▄                         ▂                         ▃                         ▄</text>
-  <text x="112" y="586" class="red" font-size="23">                            × BOA-3 RAIDER       ╲       ╱</text>
-  <text x="112" y="614" class="red" font-size="23">                                                 ╲     ╱</text>
-  <text x="112" y="642" class="magenta" font-size="23">            ───────────────────────────────────────◆──────────────────────────────────────</text>
-  <text x="112" y="670" class="red" font-size="23">                                                 ╱     ╲</text>
-  <text x="112" y="698" class="red" font-size="23">                                           ╱       ╲        LASER CONTACT</text>
+  <text x="112" y="586" class="red" font-size="23">                            × BOA-3 RAIDER       ╲       ╱        ▄▆█▆▄</text>
+  <text x="112" y="614" class="red" font-size="23">                                                 ╲     ╱       ▄█▀  ▀█▄</text>
+  <text x="112" y="642" class="magenta" font-size="23">            ═══════════════════════════════════════◆═══════════════════════╳══════════════</text>
+  <text x="112" y="670" class="red" font-size="23">                                                 ╱     ╲       ▀█▄  ▄█▀</text>
+  <text x="112" y="698" class="red" font-size="23">                                           ╱       ╲        ▀▆█▆▀   HULL BREACH</text>
   <text x="112" y="726" class="cyanDim" font-size="23">  ▄                         ▂                         ▃                         ▄</text>
   <text x="112" y="754" class="cyanDim" font-size="23">               ▃                         ▄                         ▂                         ▃</text>
   <text x="112" y="782" class="cyanDim" font-size="23">       ▂                         ▄                         ▃                         ▂</text>
