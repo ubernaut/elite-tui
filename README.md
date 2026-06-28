@@ -4,23 +4,23 @@ A clean-room Elite-inspired terminal flight demo built with Deno, Three.js, and 
 renderer.
 
 <figure>
-  <img src="assets/screenshots/cockpit-help.svg" alt="Elite TUI cockpit help overlay" width="100%">
-  <figcaption>Docking approach with Coriolis station alignment, scanner contacts, and flight telemetry. <a href="assets/screenshots/cockpit-help.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/startup-help.svg" alt="Live Elite TUI startup help overlay capture" width="100%">
+  <figcaption>Real 180x54 terminal capture from <code>deno task start</code>: startup help overlay, live Three ASCII scene, scanner, and dashboard. <a href="assets/screenshots/startup-help.svg">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/scanner-render-options.svg" alt="Elite TUI scanner and render options" width="100%">
-  <figcaption>Combat view with a target lock, laser contact, hull breach, scanner contacts, and ASCII render mode. <a href="assets/screenshots/scanner-render-options.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/flight-scanner.svg" alt="Live Elite TUI flight and scanner capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after hiding help: flight view, scanner contacts, target readout, and dashboard telemetry. <a href="assets/screenshots/flight-scanner.svg">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/hyperspace-jump.svg" alt="Elite TUI hyperspace jump" width="100%">
-  <figcaption>Hyperspace jump with witchspace tunnel, scanner disruption, and energy draw. <a href="assets/screenshots/hyperspace-jump.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/render-options.svg" alt="Live Elite TUI render options capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after switching ASCII glyph mode and toggling fill rendering. <a href="assets/screenshots/render-options.svg">Open full size</a>.</figcaption>
 </figure>
 
 <figure>
-  <img src="assets/screenshots/bounty-destroyed.svg" alt="Elite TUI bounty destroyed" width="100%">
-  <figcaption>Bounty aftermath with a destroyed raider, debris bloom, score update, and combat log. <a href="assets/screenshots/bounty-destroyed.svg">Open full size</a>.</figcaption>
+  <img src="assets/screenshots/hyperspace-reset.svg" alt="Live Elite TUI hyperspace reset capture" width="100%">
+  <figcaption>Real 180x54 terminal capture after pressing <code>H</code> for hyperspace reset. <a href="assets/screenshots/hyperspace-reset.svg">Open full size</a>.</figcaption>
 </figure>
 
 Run it with:
