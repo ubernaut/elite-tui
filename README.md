@@ -13,6 +13,16 @@ renderer.
   <figcaption>Combat view with a target lock, laser contact, hull breach, scanner contacts, and ASCII render mode. <a href="assets/screenshots/scanner-render-options.svg">Open full size</a>.</figcaption>
 </figure>
 
+<figure>
+  <img src="assets/screenshots/hyperspace-jump.svg" alt="Elite TUI hyperspace jump" width="100%">
+  <figcaption>Hyperspace jump with witchspace tunnel, scanner disruption, and energy draw. <a href="assets/screenshots/hyperspace-jump.svg">Open full size</a>.</figcaption>
+</figure>
+
+<figure>
+  <img src="assets/screenshots/bounty-destroyed.svg" alt="Elite TUI bounty destroyed" width="100%">
+  <figcaption>Bounty aftermath with a destroyed raider, debris bloom, score update, and combat log. <a href="assets/screenshots/bounty-destroyed.svg">Open full size</a>.</figcaption>
+</figure>
+
 Run it with:
 
 ```sh
