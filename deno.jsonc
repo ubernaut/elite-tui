@@ -4,7 +4,8 @@
     "check": "deno check src/main.ts",
     "web:check": "deno check src/web.ts",
     "web:build": "rm -rf dist && mkdir -p dist && cp web/index.html dist/index.html && deno bundle --platform browser --minify src/web.ts -o dist/elite-tui.js",
-    "fmt": "deno fmt src web"
+    "web:start": "deno task web:build && deno run --allow-net --allow-read --allow-env scripts/serve_web.ts",
+    "fmt": "deno fmt src web scripts"
   },
   "fmt": {
     "lineWidth": 120

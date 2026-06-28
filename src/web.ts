@@ -44,6 +44,16 @@ const SCANNER_WIDTH = 30;
 const MAX_SPEED = 36;
 const TARGET_COUNT = 5;
 const HOLD_CAPACITY = 20;
+const CAMERA_FAR = 2800;
+const STAR_COUNT = 900;
+const STAR_SPREAD_X = 900;
+const STAR_SPREAD_Y = 520;
+const STAR_DEPTH = 1150;
+const TRAFFIC_DESPAWN_RANGE = 640;
+const TRAFFIC_SPAWN_MIN_Z = 280;
+const TRAFFIC_SPAWN_DEPTH = 340;
+const LASER_RANGE = 520;
+const MISSILE_RANGE = 600;
 
 const neon = {
   void: "#02030a",
@@ -135,9 +145,9 @@ root.addEventListener("contextmenu", (event) => event.preventDefault());
 
 const scene = new Scene();
 scene.background = new Color("#000000");
-const camera = new PerspectiveCamera(45, 1, 0.1, 700);
+const camera = new PerspectiveCamera(45, 1, 0.1, CAMERA_FAR);
 camera.position.set(0, 1.1, 13);
-camera.lookAt(0, 0, -45);
+camera.lookAt(0, 0, -160);
 
 scene.add(new AmbientLight(new Color("#7d4dff"), 1.1));
 const keyLight = new DirectionalLight(new Color(neon.cyan), 2.4);
@@ -149,25 +159,25 @@ scene.add(magentaLight);
 
 const world = new Group();
 scene.add(world);
-const stars = createStarfield(260);
+const stars = createStarfield(STAR_COUNT);
 world.add(stars);
 
 const planet = new Mesh(
   new SphereGeometry(14, 42, 28),
   new MeshPhongMaterial({ color: new Color("#176e8d"), emissive: new Color("#08182b"), shininess: 12 }),
 );
-planet.position.set(-42, -24, -150);
+planet.position.set(-150, -78, -620);
 world.add(planet);
 
 const sun = new Mesh(
   new SphereGeometry(9, 34, 20),
   new MeshPhongMaterial({ color: new Color(neon.amber), emissive: new Color("#6e214a"), shininess: 18 }),
 );
-sun.position.set(58, 30, -190);
+sun.position.set(210, 105, -780);
 world.add(sun);
 
 const station = createWireBox("CORIOLIS", 8, neon.cyan);
-station.group.position.set(0, -4, -95);
+station.group.position.set(0, -14, -360);
 station.group.rotation.set(0.6, 0.2, 0.2);
 world.add(station.group);
 
@@ -460,8 +470,13 @@ function updateWorld(deltaTime: number): void {
       target.group.rotation.x += dt * 0.5;
       target.group.rotation.y += dt * 0.9;
       target.group.position.z += state.speed * dt * 0.32;
-      if (target.group.position.z > 12 || target.group.position.length() > 160) {
-        placeRaider(target, Math.random() * 80 - 40, Math.random() * 32 - 10, -80 - Math.random() * 80);
+      if (target.group.position.z > 12 || target.group.position.length() > TRAFFIC_DESPAWN_RANGE) {
+        placeRaider(
+          target,
+          Math.random() * 220 - 110,
+          Math.random() * 90 - 30,
+          -TRAFFIC_SPAWN_MIN_Z - Math.random() * TRAFFIC_SPAWN_DEPTH,
+        );
       }
     }
     const closestHostile = targets.filter((target) =>
@@ -489,7 +504,7 @@ function fireLaser(): void {
   laserBeams.visible = true;
   const target = activeTarget();
   const p = target.group.position;
-  const centered = Math.abs(p.x) < 10 && Math.abs(p.y) < 8 && p.z < -12 && p.z > -130;
+  const centered = Math.abs(p.x) < 22 && Math.abs(p.y) < 16 && p.z < -12 && p.z > -LASER_RANGE;
   if (centered && target.integrity > 0) {
     target.integrity = clamp(target.integrity - 34, 0, 100);
     state.message = target.integrity <= 0 ? `${target.id} DESTROYED` : `${target.id} HIT`;
@@ -501,7 +516,10 @@ function fireLaser(): void {
 
 function fireMissile(): void {
   const target = activeTarget();
-  if (state.missiles <= 0 || target === station || target.integrity <= 0 || Math.abs(target.group.position.z) > 150) {
+  if (
+    state.missiles <= 0 || target === station || target.integrity <= 0 ||
+    Math.abs(target.group.position.z) > MISSILE_RANGE
+  ) {
     state.message = state.missiles <= 0 ? "MISSILE BAY EMPTY" : "MISSILE LOCK FAILED";
     return;
   }
@@ -521,7 +539,12 @@ function destroyTarget(target: Target): void {
   setTimeout(() => {
     target.group.visible = true;
     target.integrity = 100;
-    placeRaider(target, Math.random() * 90 - 45, Math.random() * 36 - 12, -100 - Math.random() * 80);
+    placeRaider(
+      target,
+      Math.random() * 240 - 120,
+      Math.random() * 96 - 32,
+      -TRAFFIC_SPAWN_MIN_Z - Math.random() * TRAFFIC_SPAWN_DEPTH,
+    );
   }, 1800);
 }
 
@@ -537,7 +560,7 @@ function hyperspaceJump(): void {
     if (target === station) continue;
     target.group.visible = true;
     target.integrity = 100;
-    placeRaider(target, Math.sin(index * 2.1) * 48, Math.cos(index * 1.8) * 20, -90 - index * 18);
+    placeRaider(target, Math.sin(index * 2.1) * 150, Math.cos(index * 1.8) * 60, -260 - index * 70);
   }
   state.message = `WITCHSPACE EXIT: ${currentSystem().name}`;
 }
@@ -599,7 +622,7 @@ function scannerGrid(): string[] {
     if (!target.group.visible || target.integrity <= 0) continue;
     const p = target.group.position;
     const x = clamp(Math.round(width / 2 + p.x / 8), 0, width - 1);
-    const y = clamp(Math.round(height / 2 + p.z / 24), 0, height - 1);
+    const y = clamp(Math.round(height / 2 + p.z / 84), 0, height - 1);
     rows[y]![x] = index === state.targetIndex ? "*" : target.hostile ? "x" : "o";
   }
   return rows.map((row) => row.join(""));
@@ -608,7 +631,11 @@ function scannerGrid(): string[] {
 function createStarfield(count: number): Points {
   const positions: number[] = [];
   for (let i = 0; i < count; i += 1) {
-    positions.push((Math.random() - 0.5) * 260, (Math.random() - 0.5) * 150, -20 - Math.random() * 260);
+    positions.push(
+      (Math.random() - 0.5) * STAR_SPREAD_X,
+      (Math.random() - 0.5) * STAR_SPREAD_Y,
+      -24 - Math.random() * STAR_DEPTH,
+    );
   }
   const geometry = new BufferGeometry();
   geometry.setAttribute("position", new Float32BufferAttribute(positions, 3));
@@ -650,7 +677,7 @@ function createRaider(index: number): Target {
     hostile: index % 2 === 0,
     integrity: 100,
   };
-  placeRaider(target, Math.sin(index * 2.4) * 42, Math.cos(index * 1.8) * 18, -70 - index * 22);
+  placeRaider(target, Math.sin(index * 2.4) * 140, Math.cos(index * 1.8) * 58, -240 - index * 76);
   return target;
 }
 
@@ -678,9 +705,9 @@ function createReticle(): Group {
 function createLaserBeams(): Group {
   const geometry = new BufferGeometry().setFromPoints([
     new Vector3(-2.2, -1.2, -4),
-    new Vector3(-0.25, -0.05, -70),
+    new Vector3(-0.25, -0.05, -LASER_RANGE),
     new Vector3(2.2, -1.2, -4),
-    new Vector3(0.25, -0.05, -70),
+    new Vector3(0.25, -0.05, -LASER_RANGE),
   ]);
   const group = new Group();
   group.add(new LineSegments(geometry, new LineBasicMaterial({ color: new Color(neon.red) })));

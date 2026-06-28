@@ -42,7 +42,18 @@ const DASHBOARD_HEIGHT = 12;
 const SCANNER_WIDTH = 28;
 const MAX_SPEED = 36;
 const TARGET_COUNT = 5;
-const ENEMY_FIRE_RANGE = 58;
+const CAMERA_FAR = 2800;
+const STAR_COUNT = 900;
+const STAR_SPREAD_X = 900;
+const STAR_SPREAD_Y = 520;
+const STAR_DEPTH = 1150;
+const TRAFFIC_DESPAWN_RANGE = 640;
+const TRAFFIC_SPAWN_MIN_Z = 280;
+const TRAFFIC_SPAWN_DEPTH = 340;
+const LASER_RANGE = 520;
+const MISSILE_RANGE = 600;
+const ENEMY_FIRE_RANGE = 190;
+const DOCKING_RANGE = 300;
 const HOLD_CAPACITY = 20;
 const audioEncoder = new TextEncoder();
 
@@ -228,9 +239,9 @@ tui.on("destroy", () => sound.dispose());
 const scene = new Scene();
 scene.background = new Color("#000000");
 
-const camera = new PerspectiveCamera(45, 1, 0.1, 700);
+const camera = new PerspectiveCamera(45, 1, 0.1, CAMERA_FAR);
 camera.position.set(0, 1.1, 13);
-camera.lookAt(0, 0, -45);
+camera.lookAt(0, 0, -160);
 
 scene.add(new AmbientLight(new Color("#7d4dff"), 1.1));
 
@@ -245,7 +256,7 @@ scene.add(blueLight);
 const world = new Group();
 scene.add(world);
 
-const stars = createStarfield(260);
+const stars = createStarfield(STAR_COUNT);
 world.add(stars);
 
 const planet = new Mesh(
@@ -257,7 +268,7 @@ const planet = new Mesh(
     specular: new Color("#ff3bc8"),
   }),
 );
-planet.position.set(-42, -24, -150);
+planet.position.set(-150, -78, -620);
 world.add(planet);
 
 const sun = new Mesh(
@@ -268,11 +279,11 @@ const sun = new Mesh(
     shininess: 18,
   }),
 );
-sun.position.set(58, 30, -190);
+sun.position.set(210, 105, -780);
 world.add(sun);
 
 const station = createWireBox("CORIOLIS", 8, neon.cyan);
-station.group.position.set(0, -4, -95);
+station.group.position.set(0, -14, -360);
 station.group.rotation.set(0.6, 0.2, 0.2);
 world.add(station.group);
 
@@ -770,8 +781,13 @@ function updateWorld(deltaTime: number): void {
       target.group.position.z += state.speed * dt * 0.32;
       target.attackCooldown = Math.max(0, target.attackCooldown - dt);
       maybeEnemyFire(target);
-      if (target.group.position.z > 12 || target.group.position.length() > 160) {
-        placeRaider(target, Math.random() * 80 - 40, Math.random() * 32 - 10, -80 - Math.random() * 80);
+      if (target.group.position.z > 12 || target.group.position.length() > TRAFFIC_DESPAWN_RANGE) {
+        placeRaider(
+          target,
+          Math.random() * 220 - 110,
+          Math.random() * 90 - 30,
+          -TRAFFIC_SPAWN_MIN_Z - Math.random() * TRAFFIC_SPAWN_DEPTH,
+        );
       }
     }
 
@@ -806,7 +822,8 @@ function fireLaser(): void {
 
   const target = activeTarget();
   const position = target.group.position;
-  const centered = Math.abs(position.x) < 10 && Math.abs(position.y) < 8 && position.z < -12 && position.z > -130;
+  const centered = Math.abs(position.x) < 22 && Math.abs(position.y) < 16 && position.z < -12 &&
+    position.z > -LASER_RANGE;
   if (centered && target.integrity > 0) {
     target.integrity = clamp(target.integrity - 34, 0, 100);
     state.message = target.integrity <= 0 ? `${target.id} DESTROYED` : `${target.id} HIT`;
@@ -829,7 +846,7 @@ function fireMissile(): void {
 
   const target = activeTarget();
   const range = Math.abs(target.group.position.z);
-  if (target === station || !target.group.visible || target.integrity <= 0 || range > 150) {
+  if (target === station || !target.group.visible || target.integrity <= 0 || range > MISSILE_RANGE) {
     state.message = "MISSILE LOCK FAILED";
     sound.play("error");
     return;
@@ -853,7 +870,12 @@ function destroyTarget(target: Target): void {
   setTimeout(() => {
     target.group.visible = true;
     target.integrity = 100;
-    placeRaider(target, Math.random() * 90 - 45, Math.random() * 36 - 12, -100 - Math.random() * 80);
+    placeRaider(
+      target,
+      Math.random() * 240 - 120,
+      Math.random() * 96 - 32,
+      -TRAFFIC_SPAWN_MIN_Z - Math.random() * TRAFFIC_SPAWN_DEPTH,
+    );
   }, 1800);
 }
 
@@ -892,7 +914,7 @@ function takeDamage(amount: number, shield: "fore" | "aft", source: string): voi
 function attemptDock(): void {
   const target = activeTarget();
   const range = Math.abs(station.group.position.z);
-  if (target !== station || range > 115 || state.speed > 14) {
+  if (target !== station || range > DOCKING_RANGE || state.speed > 14) {
     state.message = "DOCKING DENIED - TARGET STATION AT LOW SPEED";
     sound.play("error");
     return;
@@ -1008,7 +1030,7 @@ function hyperspaceReset(): void {
     if (target === station) continue;
     target.group.visible = true;
     target.integrity = 100;
-    placeRaider(target, Math.sin(index * 2.1) * 48, Math.cos(index * 1.8) * 20, -90 - index * 18);
+    placeRaider(target, Math.sin(index * 2.1) * 150, Math.cos(index * 1.8) * 60, -260 - index * 70);
   }
   state.message = `WITCHSPACE EXIT: ${currentSystem().name}`;
   sound.play("hyperspace");
@@ -1067,7 +1089,7 @@ function scannerGrid(): string[] {
     if (!target.group.visible || target.integrity <= 0) continue;
     const p = target.group.position;
     const x = clamp(Math.round(width / 2 + p.x / 8), 0, width - 1);
-    const y = clamp(Math.round(height / 2 + p.z / 24), 0, height - 1);
+    const y = clamp(Math.round(height / 2 + p.z / 84), 0, height - 1);
     rows[y]![x] = index === state.targetIndex ? "◆" : target.hostile ? "×" : "○";
   }
 
@@ -1077,7 +1099,11 @@ function scannerGrid(): string[] {
 function createStarfield(count: number): Points {
   const positions: number[] = [];
   for (let i = 0; i < count; i += 1) {
-    positions.push((Math.random() - 0.5) * 260, (Math.random() - 0.5) * 150, -20 - Math.random() * 260);
+    positions.push(
+      (Math.random() - 0.5) * STAR_SPREAD_X,
+      (Math.random() - 0.5) * STAR_SPREAD_Y,
+      -24 - Math.random() * STAR_DEPTH,
+    );
   }
   const geometry = new BufferGeometry();
   geometry.setAttribute("position", new Float32BufferAttribute(positions, 3));
@@ -1133,7 +1159,7 @@ function createRaider(index: number): Target {
     attackCooldown: 0.8 + Math.random() * 2.5,
   };
 
-  placeRaider(target, Math.sin(index * 2.4) * 42, Math.cos(index * 1.8) * 18, -70 - index * 22);
+  placeRaider(target, Math.sin(index * 2.4) * 140, Math.cos(index * 1.8) * 58, -240 - index * 76);
   return target;
 }
 
@@ -1164,9 +1190,9 @@ function createLaserBeams(): Group {
   const material = new LineBasicMaterial({ color: new Color(neon.red) });
   const geometry = new BufferGeometry().setFromPoints([
     new Vector3(-2.2, -1.2, -4),
-    new Vector3(-0.25, -0.05, -70),
+    new Vector3(-0.25, -0.05, -LASER_RANGE),
     new Vector3(2.2, -1.2, -4),
-    new Vector3(0.25, -0.05, -70),
+    new Vector3(0.25, -0.05, -LASER_RANGE),
   ]);
   const group = new Group();
   group.add(new LineSegments(geometry, material));
