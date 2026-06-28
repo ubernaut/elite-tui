@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title desc">
+  <title id="title">Elite TUI scanner and render options</title>
+  <desc id="desc">A neon terminal cockpit view with scanner panel, ASCII render options, and ship gauges.</desc>
+  <rect width="1120" height="760" fill="#02030a"/>
+  <rect x="24" y="24" width="1072" height="712" rx="10" fill="#050915" stroke="#137d91" stroke-width="2"/>
+  <text x="52" y="58" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">ELITE TUI // NEON EXODUS  SCORE 003</text>
+  <text x="446" y="58" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="20">&lt;&gt; FLIGHT // YELLOW &lt;&gt;</text>
+  <text x="710" y="58" fill="#ff3bc8" font-family="JetBrains Mono, Consolas, monospace" font-size="20">ASCII GLYPHS  EDGE ON  FILL OFF  INV OFF</text>
+
+  <rect x="52" y="92" width="642" height="396" rx="8" fill="#02030a" stroke="#137d91" stroke-width="2"/>
+  <text x="88" y="152" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="22">       ▃      ▄        ▂</text>
+  <text x="88" y="194" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">   ▄       .-+-.           ▃</text>
+  <text x="88" y="236" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="22">        .´  │  `.    ▄</text>
+  <text x="88" y="278" fill="#ff3bc8" font-family="JetBrains Mono, Consolas, monospace" font-size="22">  ──────────◆──────────</text>
+  <text x="88" y="320" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="22">        `._ │ _.'</text>
+  <text x="88" y="362" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">            +       ▃</text>
+  <text x="88" y="424" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="20">1 blocks  2 glyphs  3 mixed  E edges  F fill  I invert</text>
+
+  <rect x="736" y="92" width="332" height="396" rx="8" fill="#050915" stroke="#137d91" stroke-width="2"/>
+  <text x="766" y="132" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="21">LOCAL SCANNER // LAVE</text>
+  <text x="766" y="178" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">·······×···×◆···○······</text>
+  <text x="766" y="214" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">············×···········</text>
+  <text x="766" y="250" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">························</text>
+  <text x="766" y="286" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="23">············▲···········</text>
+  <text x="766" y="322" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">························</text>
+  <text x="766" y="358" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">························</text>
+  <text x="766" y="394" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="23">························</text>
+  <text x="766" y="446" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="20">LOCK BOA-3   RAIDER  RNG 082 INT 066</text>
+
+  <rect x="52" y="530" width="1016" height="160" rx="8" fill="#050915" stroke="#ff3bc8" stroke-width="2"/>
+  <text x="82" y="572" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="21">SPD 17.8  THR 28  ALT 156  MISS 3  ALERT YELLOW  LOCK BOA-3</text>
+  <text x="82" y="614" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="21">SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▱▱  AFT ▰▰▰▰▰▰▰▰▰▰▰▱</text>
+  <text x="82" y="656" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="21">CORE    ENER ▰▰▰▰▰▰▰▰▰▱▱▱  LASER ▰▰▰▰▰▰▰▱▱▱▱▱</text>
+  <text x="82" y="698" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="20">&gt;&gt; BOA-3 HIT</text>
+</svg>

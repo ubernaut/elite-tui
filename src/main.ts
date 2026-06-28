@@ -41,6 +41,7 @@ const DASHBOARD_HEIGHT = 10;
 const SCANNER_WIDTH = 28;
 const MAX_SPEED = 36;
 const TARGET_COUNT = 5;
+const audioEncoder = new TextEncoder();
 
 const neon = {
   void: "#02030a",
@@ -71,6 +72,7 @@ const style = {
 };
 
 type Alert = "GREEN" | "YELLOW" | "RED";
+type SoundCue = "blip" | "error" | "hit" | "hyperspace" | "kill" | "laser" | "lock" | "pause";
 
 interface Target {
   id: string;
@@ -117,6 +119,55 @@ const state: ShipState = {
   message: "LAUNCHED FROM LAVE ORBITAL",
 };
 
+class TerminalSound {
+  #timers = new Set<number>();
+
+  constructor(readonly enabled: boolean) {}
+
+  play(cue: SoundCue): void {
+    if (!this.enabled || !Deno.stdout.isTerminal()) return;
+
+    const pattern = cuePattern(cue);
+    for (const delay of pattern) {
+      const timer = setTimeout(() => {
+        this.#timers.delete(timer);
+        try {
+          Deno.stdout.writeSync(audioEncoder.encode("\x07"));
+        } catch {
+          // Terminal bell support is optional.
+        }
+      }, delay);
+      this.#timers.add(timer);
+    }
+  }
+
+  dispose(): void {
+    for (const timer of this.#timers) clearTimeout(timer);
+    this.#timers.clear();
+  }
+}
+
+function cuePattern(cue: SoundCue): number[] {
+  switch (cue) {
+    case "laser":
+      return [0, 32];
+    case "hit":
+      return [0, 70, 140];
+    case "kill":
+      return [0, 45, 90, 180];
+    case "hyperspace":
+      return [0, 55, 110, 165, 260];
+    case "error":
+      return [0, 220];
+    case "pause":
+      return [0, 120];
+    case "lock":
+      return [0, 55];
+    case "blip":
+      return [0];
+  }
+}
+
 const hud = {
   title: new Signal(""),
   mode: new Signal(""),
@@ -138,6 +189,8 @@ const renderOptions = {
   invertLuminance: false,
 };
 
+const sound = new TerminalSound(Deno.env.get("ELITE_TUI_SOUND") !== "0");
+
 const tui = new Tui({
   style: crayon.bgHex(neon.void),
   refreshRate: 1000 / 30,
@@ -146,6 +199,7 @@ const tui = new Tui({
 void handleInput(tui);
 tui.dispatch();
 tui.run();
+tui.on("destroy", () => sound.dispose());
 
 const scene = new Scene();
 scene.background = new Color("#000000");
@@ -512,6 +566,7 @@ function bindKeys(): void {
       case "?":
         helpVisible.value = !helpVisible.peek();
         state.message = helpVisible.peek() ? "HELP OVERLAY OPEN" : "HELP OVERLAY HIDDEN";
+        sound.play("blip");
         break;
       case "1":
         setGlyphStyle("blocks");
@@ -569,6 +624,7 @@ function bindKeys(): void {
       case "tab":
         state.targetIndex = (state.targetIndex + 1) % targets.length;
         state.message = `TARGET ${activeTarget().id}`;
+        sound.play("lock");
         break;
       case "h":
         hyperspaceReset();
@@ -576,6 +632,7 @@ function bindKeys(): void {
       case "p":
         state.paused = !state.paused;
         state.message = state.paused ? "FLIGHT COMPUTER PAUSED" : "FLIGHT COMPUTER ACTIVE";
+        sound.play("pause");
         break;
     }
 
@@ -587,6 +644,7 @@ function setGlyphStyle(glyphStyle: TerminalGlyphStyle): void {
   renderOptions.glyphStyle = glyphStyle;
   ascii.drawnObjects.three_ascii?.setTerminalGlyphStyle(glyphStyle);
   state.message = `ASCII GLYPHS: ${glyphStyle.toUpperCase()}`;
+  sound.play("blip");
   refreshHud();
 }
 
@@ -602,6 +660,7 @@ function setRenderEffect(patch: Partial<Pick<typeof renderOptions, "edges" | "fi
     state.message = `ASCII INVERT ${renderOptions.invertLuminance ? "ON" : "OFF"}`;
   }
 
+  sound.play("blip");
   refreshHud();
 }
 
@@ -657,12 +716,14 @@ function updateWorld(deltaTime: number): void {
 function fireLaser(): void {
   if (state.laserHeat > 82 || state.energy < 6) {
     state.message = "LASER TEMPERATURE CRITICAL";
+    sound.play("error");
     return;
   }
 
   state.laserHeat = clamp(state.laserHeat + 24, 0, 100);
   state.energy = clamp(state.energy - 4, 0, 100);
   laserBeams.visible = true;
+  sound.play("laser");
 
   const target = activeTarget();
   const position = target.group.position;
@@ -671,6 +732,7 @@ function fireLaser(): void {
     target.integrity = clamp(target.integrity - 34, 0, 100);
     state.message = target.integrity <= 0 ? `${target.id} DESTROYED` : `${target.id} HIT`;
     if (target.integrity <= 0) {
+      sound.play("kill");
       state.score += target.hostile ? 1 : 0;
       target.group.visible = false;
       setTimeout(() => {
@@ -678,6 +740,8 @@ function fireLaser(): void {
         target.integrity = 100;
         placeRaider(target, Math.random() * 90 - 45, Math.random() * 36 - 12, -100 - Math.random() * 80);
       }, 1800);
+    } else {
+      sound.play("hit");
     }
   } else {
     state.message = "PULSE LASER FIRED";
@@ -699,6 +763,7 @@ function hyperspaceReset(): void {
     placeRaider(target, Math.sin(index * 2.1) * 48, Math.cos(index * 1.8) * 20, -90 - index * 18);
   }
   state.message = "WITCHSPACE EXIT COMPLETE";
+  sound.play("hyperspace");
 }
 
 function refreshHud(): void {

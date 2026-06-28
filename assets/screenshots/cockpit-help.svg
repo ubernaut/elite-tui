@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700" role="img" aria-labelledby="title desc">
+  <title id="title">Elite TUI cockpit help overlay</title>
+  <desc id="desc">A neon terminal cockpit view with help overlay, ASCII renderer status, and dashboard gauges.</desc>
+  <rect width="1120" height="700" fill="#02030a"/>
+  <rect x="24" y="24" width="1072" height="652" rx="10" fill="#050915" stroke="#137d91" stroke-width="2"/>
+  <text x="52" y="58" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">ELITE TUI // NEON EXODUS  SCORE 000</text>
+  <text x="620" y="58" fill="#ff3bc8" font-family="JetBrains Mono, Consolas, monospace" font-size="20">ASCII MIXED  EDGE ON  FILL ON  INV OFF</text>
+
+  <rect x="52" y="92" width="672" height="308" rx="8" fill="#050915" stroke="#ff3bc8" stroke-width="2"/>
+  <text x="82" y="132" fill="#ff3bc8" font-family="JetBrains Mono, Consolas, monospace" font-size="24">NEON EXODUS FLIGHT DECK</text>
+  <text x="82" y="172" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">? hide/show   Q quit   P pause</text>
+  <text x="82" y="212" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">ARROWS pitch/roll     A/D yaw</text>
+  <text x="82" y="252" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">W/S throttle          Space pulse laser</text>
+  <text x="82" y="292" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">Tab target            H hyperspace reset</text>
+  <text x="82" y="332" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">ASCII 1 blocks   2 glyphs   3 mixed</text>
+  <text x="82" y="372" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="22">E edges   F fill   I invert luminance</text>
+
+  <text x="776" y="146" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="18">THREE ASCII VIEW</text>
+  <text x="778" y="194" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="20">    ▃       ▄</text>
+  <text x="778" y="232" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="20">      ▄   ▃</text>
+  <text x="778" y="270" fill="#4dfcff" font-family="JetBrains Mono, Consolas, monospace" font-size="20">          +</text>
+  <text x="778" y="308" fill="#ff3bc8" font-family="JetBrains Mono, Consolas, monospace" font-size="20">       ──◆──</text>
+  <text x="778" y="346" fill="#62b8bc" font-family="JetBrains Mono, Consolas, monospace" font-size="20">   ▃          ▄</text>
+
+  <rect x="52" y="444" width="1016" height="172" rx="8" fill="#050915" stroke="#ff3bc8" stroke-width="2"/>
+  <text x="82" y="486" fill="#e8fbff" font-family="JetBrains Mono, Consolas, monospace" font-size="21">SPD  0.0  THR 18  ALT 156  MISS 3  ALERT GREEN  LOCK CORIOLIS</text>
+  <text x="82" y="528" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="21">SHIELD  FORE ▰▰▰▰▰▰▰▰▰▰▰▰  AFT ▰▰▰▰▰▰▰▰▰▰▰▰</text>
+  <text x="82" y="570" fill="#b7ff5a" font-family="JetBrains Mono, Consolas, monospace" font-size="21">CORE    ENER ▰▰▰▰▰▰▰▰▰▰▰▰  LASER ▰▰▰▰▰▰▰▰▰▰▰▰</text>
+  <text x="82" y="612" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="21">VECTOR  PIT ────◆────  ROL ────◆────  YAW ────◆────</text>
+  <text x="82" y="650" fill="#ffd166" font-family="JetBrains Mono, Consolas, monospace" font-size="20">&gt;&gt; LAUNCHED FROM LAVE ORBITAL</text>
+</svg>
